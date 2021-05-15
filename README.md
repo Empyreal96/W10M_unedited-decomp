@@ -16,9 +16,11 @@ Pure Hex-rays Decompiler Psudocode of various Windows 10 Mobile Binaries, No edi
 
 
 
-Currenty in repo:
+## Currenty in repo:
 
-- Ntoskrnl - 10.0.1024.16384
+For reference I used binaries that match their debug symbols, `ntkrnlmp.pdb` can be renamed to `ntoskrnl.pdb`  as the binary's default name is `ntoskrnl.exe` in an installed system.
+
+- ntoskrnl/ntkrnlmp - 10.0.1024.16384  [ntkrnlmp/ntoskrnl.pdb](https://github.com/Empyreal96/Windows-10-Mobile-Public-Symbols/blob/main/RM1087_th1-10.0.10240/ntkrnlmp.pdb/163F2A694A3B45488F0FF8D11DFD601C1/ntkrnlmp.pdb)
 
 
 
