@@ -57,7 +57,7 @@ int __fastcall PipProcessDevNodeTree(int a1, int a2, int a3, int a4, int a5, int
       if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x2000000) != 0 )
         Template_z(
           Microsoft_Windows_Kernel_PnPHandle,
-          dword_649E54,
+          MEMORY[0x649E54],
           (int)KMPnPEvt_AssignResources_Stop,
           (int)&Microsoft_Windows_Kernel_PnPHandle,
           *(unsigned __int16 **)(v8 + 24));

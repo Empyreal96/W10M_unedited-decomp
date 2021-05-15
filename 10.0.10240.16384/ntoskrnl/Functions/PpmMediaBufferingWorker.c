@@ -1,14 +1,13 @@
 // PpmMediaBufferingWorker 
  
-int PpmMediaBufferingWorker()
+void PpmMediaBufferingWorker()
 {
   int v0; // r7
   int v1; // r6
-  unsigned int v3; // r2
-  int v4; // r5
-  __int64 v5; // kr00_8
-  int v6[2]; // [sp+8h] [bp-38h] BYREF
-  int var30[13]; // [sp+10h] [bp-30h] BYREF
+  unsigned int v2; // r2
+  int v3; // r5
+  __int64 v4; // kr00_8
+  int var38[15]; // [sp+8h] [bp-38h] BYREF
   int vars4; // [sp+44h] [bp+4h]
 
   while ( 1 )
@@ -16,14 +15,17 @@ int PpmMediaBufferingWorker()
     v0 = 1;
     v1 = KfRaiseIrql(2);
     if ( (dword_682604 & 0x210000) != 0 )
-      return sub_50F4D0();
+    {
+      sub_50F4D0();
+      return;
+    }
     do
-      v3 = __ldrex((unsigned int *)&PpmMediaBufferingWork);
+      v2 = __ldrex((unsigned int *)&PpmMediaBufferingWork);
     while ( __strex(1u, (unsigned int *)&PpmMediaBufferingWork) );
     __dmb(0xBu);
-    if ( v3 )
-      KxWaitForSpinLockAndAcquire(&PpmMediaBufferingWork);
-    v4 = (unsigned __int8)byte_61F485;
+    if ( v2 )
+      KxWaitForSpinLockAndAcquire((unsigned int *)&PpmMediaBufferingWork);
+    v3 = (unsigned __int8)byte_61F485;
     if ( byte_61F485 == byte_61EC4C )
       break;
     byte_61EC4C = byte_61F485;
@@ -39,32 +41,25 @@ int PpmMediaBufferingWorker()
     KfLowerIrql(v1);
     if ( PpmEtwRegistered )
     {
-      v5 = *(_QWORD *)&PpmEtwHandle;
-      if ( EtwEventEnabled(PpmEtwHandle, dword_61DEC4, PPM_ETW_MEDIA_BUFFERING_NOTIFY) )
+      v4 = *(_QWORD *)&PpmEtwHandle;
+      if ( EtwEventEnabled(PpmEtwHandle, dword_61DEC4, (int)PPM_ETW_MEDIA_BUFFERING_NOTIFY) )
       {
-        var30[0] = (int)v6;
-        var30[1] = 0;
-        var30[2] = 4;
-        var30[3] = 0;
-        ((void (__fastcall *)(_DWORD, _DWORD, int *, _DWORD, int, int *, bool, int))EtwWrite)(
-          v5,
-          HIDWORD(v5),
-          PPM_ETW_MEDIA_BUFFERING_NOTIFY,
-          0,
-          1,
-          var30,
-          v4 != 0,
-          v6[1]);
+        var38[0] = v3 != 0;
+        var38[2] = (int)var38;
+        var38[3] = 0;
+        var38[4] = 4;
+        var38[5] = 0;
+        EtwWrite(v4, SHIDWORD(v4), (int)PPM_ETW_MEDIA_BUFFERING_NOTIFY, 0);
       }
     }
-    PpmAcquireLock(&PpmPerfPolicyLock);
-    if ( !PpmLowPowerProfile && (v4 || !PpmPdcMediaEngaged) )
+    PpmAcquireLock((unsigned int *)&PpmPerfPolicyLock);
+    if ( !PpmLowPowerProfile && (v3 || !PpmPdcMediaEngaged) )
       v0 = 0;
     PpmReleaseLock(&PpmPerfPolicyLock);
     if ( v0 )
     {
-      PpmPdcMediaEngaged = v4;
-      PpmPdcNotifyMediaBufferingUpdate(v4);
+      PpmPdcMediaEngaged = v3;
+      PpmPdcNotifyMediaBufferingUpdate();
     }
   }
   byte_61F484 = 0;
@@ -77,5 +72,5 @@ int PpmMediaBufferingWorker()
     __dmb(0xBu);
     PpmMediaBufferingWork = 0;
   }
-  return KfLowerIrql(v1);
+  KfLowerIrql(v1);
 }

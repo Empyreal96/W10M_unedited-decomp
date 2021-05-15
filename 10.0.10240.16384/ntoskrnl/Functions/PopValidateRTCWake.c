@@ -45,7 +45,7 @@ LABEL_12:
   {
     if ( (v1 & 4) == 0 )
       *a1 = 1;
-    if ( *(_QWORD *)&dword_61ECD8 && (unsigned __int64)qword_61ECC0 > *(_QWORD *)&dword_61ECD8 )
+    if ( *(_QWORD *)&qword_61ECD8 && (unsigned __int64)qword_61ECC0 > *(_QWORD *)&qword_61ECD8 )
       goto LABEL_2;
     goto LABEL_12;
   }

@@ -41,5 +41,5 @@ int __fastcall WdipSemWriteInflightLimitExceededEvent(int a1, int a2, int a3, in
     }
     while ( v7 );
   }
-  return WdipSemWriteEvent(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_SCENARIO_INFLIGHT_MAX, a3);
+  return WdipSemWriteEvent(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_SCENARIO_INFLIGHT_MAX, a3);
 }

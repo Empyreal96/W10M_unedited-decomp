@@ -59,5 +59,11 @@ void __fastcall __noreturn KiCallUserMode(int a1, int a2, int a3, int a4, int a5
   }
   while ( v22 );
   _0[5] = 0;
-  KiSystemServiceExit(KeUserCallbackDispatcher, a6 & 0xF9FF03E0 | 0x10);
+  KiSystemServiceExit(
+    KeUserCallbackDispatcher,
+    a6 & 0xF9FF03E0 | 0x10,
+    100727839,
+    0,
+    KeUserCallbackDispatcher,
+    a6 & 0xF9FF03E0 | 0x10);
 }

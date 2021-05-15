@@ -40,8 +40,8 @@ int __fastcall PopWriteImageHeader(_DWORD *a1, uint32x4_t *a2, int a3, int a4, _
   dword_61EFE4 = v27[1];
   if ( a1[40] )
   {
-    v10 = dword_61F134;
-    v11 = dword_61F130;
+    v10 = MEMORY[0x61F134];
+    v11 = qword_61F130;
     v13 = HIDWORD(qword_61EFC8);
     v12 = qword_61EFC8;
     v14 = unk_61EFC4;
@@ -53,7 +53,7 @@ int __fastcall PopWriteImageHeader(_DWORD *a1, uint32x4_t *a2, int a3, int a4, _
       v18 = __PAIR64__(v10, v11) + *(_QWORD *)(a1[41] + v16 + 40);
       v10 = HIDWORD(v18);
       v11 = v18;
-      *(_QWORD *)&dword_61F130 = v18;
+      *(_QWORD *)&qword_61F130 = v18;
       v19 = __PAIR64__(v14, v15) + *(_QWORD *)(a1[41] + v16 + 24);
       v14 = HIDWORD(v19);
       v15 = v19;
@@ -69,17 +69,17 @@ int __fastcall PopWriteImageHeader(_DWORD *a1, uint32x4_t *a2, int a3, int a4, _
     v5 = v26;
   }
   qword_61F140 = qword_61F158;
-  dword_61F150 = dword_61F160;
-  dword_61F154 = 0;
+  qword_61F150 = dword_61F160;
+  MEMORY[0x61F154] = 0;
   qword_61F158 += qword_61F138;
   dword_61F160 += dword_61F148;
   v5[4].n128_u64[1] = qword_61F128;
   if ( byte_61EED1 )
   {
     v21 = v5[4].n128_u64[1];
-    v22 = __CFADD__((_DWORD)v21, dword_61F130);
-    v23 = dword_61F134;
-    v5[4].n128_u32[2] = v21 + dword_61F130;
+    v22 = __CFADD__((_DWORD)v21, qword_61F130);
+    v23 = MEMORY[0x61F134];
+    v5[4].n128_u32[2] = v21 + qword_61F130;
     v5[4].n128_u32[3] = HIDWORD(v21) + v22 + v23;
   }
   memmove((int)&v5[6].n128_i32[2], (int)&qword_61EFA0, 0x1E0u);

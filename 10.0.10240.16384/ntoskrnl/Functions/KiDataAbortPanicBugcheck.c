@@ -170,5 +170,5 @@ void __fastcall __noreturn KiDataAbortPanicBugcheck(int a1, int a2, int a3, int 
     CPS.W           #0x17
     CPS.W           #0x13
   }
-  ((void (__fastcall *)(int, _DWORD *, _DWORD, _DWORD))KiBugCheckDispatch)(43, v45, 0, 0);
+  KiBugCheckDispatch(43, (int)v45, 0, 0);
 }

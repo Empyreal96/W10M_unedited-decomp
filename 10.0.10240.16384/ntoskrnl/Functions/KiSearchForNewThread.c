@@ -208,7 +208,7 @@ LABEL_23:
         }
       }
     }
-    v48 = unk_681FE4;
+    v48 = MEMORY[0x681FE4];
     if ( *(_DWORD *)(v5 + 352) == KiCpuSetSequence || (*(_DWORD *)(v5 + 76) & 8) != 0 )
       break;
     *(_BYTE *)(v5 + 132) = 7;

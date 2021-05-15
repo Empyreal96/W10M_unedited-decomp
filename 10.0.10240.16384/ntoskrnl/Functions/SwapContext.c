@@ -44,17 +44,18 @@ int __fastcall SwapContext(int a1, int a2, char a3, int a4)
   unsigned __int64 v51; // r0
   __int64 v52; // r2
   __int64 v53; // r0
-  unsigned int *v54; // r0
-  int v55; // r7
-  unsigned int v56; // r2
-  int v57; // r7
-  unsigned int *v58; // r1
-  unsigned int v59; // r2
-  unsigned int v60; // r0
-  int v61; // r1
-  int v63; // [sp+0h] [bp-10h] BYREF
+  int v54; // r1
+  unsigned int *v55; // r0
+  int v56; // r7
+  unsigned int v57; // r2
+  int v58; // r7
+  unsigned int *v59; // r1
+  unsigned int v60; // r2
+  unsigned int v61; // r0
+  int v62; // r1
+  int v64; // [sp+0h] [bp-10h] BYREF
 
-  LOBYTE(v63) = a3;
+  LOBYTE(v64) = a3;
   *(_DWORD *)(a1 + 1080) = __mrc(15, 0, 13, 0, 2);
   for ( i = *(unsigned __int8 *)(a2 + 73); *(_BYTE *)(a2 + 73); i = *(unsigned __int8 *)(a2 + 73) )
     __yield();
@@ -142,48 +143,46 @@ int __fastcall SwapContext(int a1, int a2, char a3, int a4)
     __enable_irq();
   }
   ++*(_DWORD *)(a4 + 1588);
-  *(_DWORD *)(a1 + 64) = &v63;
-  v54 = *(unsigned int **)(v39 + 116);
-  if ( v54 != *(unsigned int **)(a1 + 116) )
+  *(_DWORD *)(a1 + 64) = &v64;
+  v54 = *(_DWORD *)(a1 + 116);
+  v55 = *(unsigned int **)(v39 + 116);
+  if ( v55 != (unsigned int *)v54 )
   {
-    v55 = 1 << *(_BYTE *)(a4 + 1053);
+    v56 = 1 << *(_BYTE *)(a4 + 1053);
     do
-      v56 = __ldrex(v54);
-    while ( __strex(v56 | v55, v54 + 24) == 1 );
-    KxSwapProcess();
-    v57 = 1 << *(_BYTE *)(a4 + 1053);
+      v57 = __ldrex(v55);
+    while ( __strex(v57 | v56, v55 + 24) == 1 );
+    KxSwapProcess((int)v55, v54);
+    v58 = 1 << *(_BYTE *)(a4 + 1053);
     do
     {
-      v58 = *(unsigned int **)(a1 + 116);
-      v59 = __ldrex(v58);
+      v59 = *(unsigned int **)(a1 + 116);
+      v60 = __ldrex(v59);
     }
-    while ( __strex(v59 & ~v57, v58 + 24) == 1 );
+    while ( __strex(v60 & ~v58, v59 + 24) == 1 );
   }
   *(_DWORD *)(a4 + 1732) = *(_DWORD *)(v39 + 32);
   if ( (dword_682604 & 4) != 0 )
-    EtwTraceContextSwap(a1, v39);
+    EtwTraceContextSwap((int (*)())a1, v39);
   __dmb(0xBu);
   *(_BYTE *)(a1 + 73) = 0;
-  v60 = *(_DWORD *)(v39 + 156);
-  *(_DWORD *)(a4 - 1384) = v60;
-  if ( !v60 )
-    v60 = *(_DWORD *)(v39 + 1080);
-  __mcr(15, 0, v60, 13, 0, 2);
+  v61 = *(_DWORD *)(v39 + 156);
+  *(_DWORD *)(a4 - 1384) = v61;
+  if ( !v61 )
+    v61 = *(_DWORD *)(v39 + 1080);
+  __mcr(15, 0, v61, 13, 0, 2);
   if ( (*(_DWORD *)(a4 + 1756) & 0x10001) != 0 )
-  {
-    v63 = 0;
-    KeBugCheckEx(184, a1, v39);
-  }
+    KeBugCheckEx(184, a1, v39, 0, 0);
   ++*(_DWORD *)(v39 + 128);
-  v61 = *(unsigned __int8 *)(v39 + 121);
-  if ( v61 == 1 )
+  v62 = *(unsigned __int8 *)(v39 + 121);
+  if ( v62 == 1 )
   {
-    v61 = 1;
-    if ( *(unsigned __int16 *)(v39 + 310) | (unsigned __int8)v63 )
+    v62 = 1;
+    if ( *(unsigned __int16 *)(v39 + 310) | (unsigned __int8)v64 )
     {
       KiRequestSoftwareInterrupt(a4, 1);
-      v61 = 0;
+      v62 = 0;
     }
   }
-  return v61;
+  return v62;
 }

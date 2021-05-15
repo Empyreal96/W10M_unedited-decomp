@@ -15,7 +15,7 @@ int __fastcall CmpTraceHiveMountLogEntryApplied(int a1, int a2)
   var40[2] = 0;
   var40[3] = 0x40000000;
   v2 = *(_QWORD *)&EtwpRegTraceHandle;
-  result = EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)var40);
+  result = EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)var40);
   if ( result )
   {
     var40[4] = &vars8;

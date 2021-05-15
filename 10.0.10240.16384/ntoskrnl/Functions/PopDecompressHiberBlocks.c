@@ -91,13 +91,13 @@ int __fastcall PopDecompressHiberBlocks(__int64 a1, int a2, int a3, int a4)
   while ( 1 )
   {
     PopHiberCheckForDebugBreak(a1);
-    if ( !*(_QWORD *)&dword_61F108
+    if ( !*(_QWORD *)&qword_61F108
       && v6[31] == *(_DWORD *)(((unsigned int)KeGetPcr() & 0xFFFFF000) + 0x594)
       && byte_61EED0 )
     {
       KeQueryPerformanceCounter(v64, 0);
-      dword_61F108 = v64[0];
-      dword_61F10C = v64[1];
+      qword_61F108 = v64[0];
+      MEMORY[0x61F10C] = v64[1];
     }
     if ( v6[31] == *(_DWORD *)(((unsigned int)KeGetPcr() & 0xFFFFF000) + 0x594)
       && !byte_61EED1

@@ -7,7 +7,7 @@ int SmStoreCompressionStop()
   int v2[14]; // [sp+8h] [bp-38h] BYREF
 
   v2[0] = *(_DWORD *)((__mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0) + 0x74);
-  result = SmpKeyedStoreEntryGet((int)&unk_636CC4, (int)v2, 0, 0);
+  result = SmpKeyedStoreEntryGet((int)&byte_636CC4, (int)v2, 0, 0);
   if ( result )
   {
     v1 = *(unsigned __int16 *)(result + 8);

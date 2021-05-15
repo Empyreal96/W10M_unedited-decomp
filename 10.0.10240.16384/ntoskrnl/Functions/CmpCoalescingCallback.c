@@ -18,7 +18,7 @@ int __fastcall CmpCoalescingCallback(int a1)
   }
   else
   {
-    result = sub_50F6AC();
+    result = sub_50F6AC(a1);
   }
   return result;
 }

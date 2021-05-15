@@ -108,11 +108,11 @@ int __fastcall PspThreadDelete(int a1)
   result = qword_646260;
   if ( v14 >= qword_646260 )
   {
-    v16 = dword_646254;
-    v17 = dword_646250;
+    v16 = MEMORY[0x646254];
+    v17 = qword_646250;
     v19 = unk_646224;
     v18 = dword_646220;
-    if ( *(_QWORD *)&dword_646250 )
+    if ( *(_QWORD *)&qword_646250 )
     {
       v20 = 0;
       v59 = unk_646224;
@@ -142,8 +142,8 @@ int __fastcall PspThreadDelete(int a1)
           ++v20;
         }
         while ( v20 < dword_646268 );
-        v16 = dword_646254;
-        v17 = dword_646250;
+        v16 = MEMORY[0x646254];
+        v17 = qword_646250;
         v59 = v19;
       }
       v24 = (__int64 *)(dword_646290 + 88);

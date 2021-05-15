@@ -755,7 +755,7 @@ LABEL_87:
     }
     if ( v15 != *(_DWORD *)(v2 + 12) )
     {
-      v161 = unk_681FE4;
+      v161 = MEMORY[0x681FE4];
       if ( *(_DWORD *)(v15 + 352) != KiCpuSetSequence && (*(_DWORD *)(v15 + 76) & 8) == 0 )
       {
         if ( (*(_BYTE *)(v3 + 2) & 4) != 0 )

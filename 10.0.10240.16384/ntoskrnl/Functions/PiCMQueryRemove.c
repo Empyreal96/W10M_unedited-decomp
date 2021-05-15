@@ -239,7 +239,7 @@ LABEL_29:
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x1000000) != 0 )
     Template_z(
       Microsoft_Windows_Kernel_PnPHandle,
-      dword_649E54,
+      MEMORY[0x649E54],
       (int)KMPnPEvt_CfgMgr_QueryRemove_Stop,
       Microsoft_Windows_Kernel_PnPEnableBits,
       v6);

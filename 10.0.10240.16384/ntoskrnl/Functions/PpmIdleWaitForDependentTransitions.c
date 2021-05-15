@@ -24,7 +24,7 @@ int __fastcall PpmIdleWaitForDependentTransitions(int a1)
     LOBYTE(v8[6]) = 1;
     v8[4] = v3;
     v8[2] = PopIdleTransitionTimeout;
-    v8[3] = dword_6824EC;
+    v8[3] = MEMORY[0x6824EC];
     while ( !(*(int (__fastcall **)(_DWORD))(v4 + 112))(*(_DWORD *)(v4 + 120)) )
     {
       if ( (*(_DWORD *)(v3 + 3000) & 0xFF000000) != 83886080 )

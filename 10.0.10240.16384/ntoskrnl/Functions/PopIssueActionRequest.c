@@ -176,7 +176,7 @@ LABEL_50:
         dword_61F180 = a2;
         unk_61F184 = v19;
         PopShutdownButtonPressTime = 0;
-        dword_61F7E4 = 0;
+        MEMORY[0x61F7E4] = 0;
         PopSleepStats = 1;
       }
       PopDiagTracePowerTransitionEnd(v8);

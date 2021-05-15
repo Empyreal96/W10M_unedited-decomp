@@ -46,7 +46,7 @@ int __fastcall WdipSemEnableScenario(int a1, int a2, int a3)
   {
     v12 = -1073741811;
 LABEL_10:
-    if ( EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_SCENARIO_START_FAILED) )
+    if ( EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_SCENARIO_START_FAILED) )
       WdipSemWriteSemFailureEvent(WDI_SEM_EVENT_SCENARIO_START_FAILED, a1, a2, a3);
     if ( v6 )
       WdipSemDeleteTransitionalInstance(v6);
@@ -75,7 +75,7 @@ LABEL_18:
   }
   if ( v12 < 0 )
     goto LABEL_10;
-  if ( EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_SCENARIO_START) )
+  if ( EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_SCENARIO_START) )
     WdipSemWriteSemActionsEvent(WDI_SEM_EVENT_SCENARIO_START, v6);
   WdipSemActivateInstance(v6);
 LABEL_14:

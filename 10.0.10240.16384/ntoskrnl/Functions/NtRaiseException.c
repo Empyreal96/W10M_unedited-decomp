@@ -17,11 +17,10 @@ int __fastcall NtRaiseException(int a1, int a2, unsigned __int8 a3)
   {
     if ( (*(_DWORD *)(v5 + 132) & 0xF) != 0 )
     {
-      result = *(_DWORD *)(v5 + 8);
-      *(_DWORD *)(v4 + 96) = result;
+      *(_DWORD *)(v4 + 96) = *(_DWORD *)(v5 + 8);
       *(_BYTE *)(v4 + 346) = *(_BYTE *)(v5 + 19);
     }
-    KiExceptionRestoreFromService(result);
+    KiExceptionRestoreFromService();
   }
   return result;
 }

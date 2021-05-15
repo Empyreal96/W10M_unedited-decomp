@@ -238,7 +238,7 @@ LABEL_16:
     if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x2000000) != 0 )
       Template_pz(
         Microsoft_Windows_Kernel_PnPHandle,
-        dword_649E54,
+        MEMORY[0x649E54],
         v14,
         (int)&Microsoft_Windows_Kernel_PnPHandle,
         a1,
@@ -796,6 +796,6 @@ LABEL_61:
   if ( v118 )
     PiPnpRtlEndOperation(v118);
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x2000000) != 0 )
-    Template_p(Microsoft_Windows_Kernel_PnPHandle, dword_649E54, (int)KMPnPEvt_ProcessNewDevice_Stop, 0);
+    Template_p(Microsoft_Windows_Kernel_PnPHandle, MEMORY[0x649E54], (int)KMPnPEvt_ProcessNewDevice_Stop, 0);
   return v111;
 }

@@ -112,7 +112,7 @@ void __fastcall __noreturn KiResetException(__int64 a1, __int64 a2)
     LODWORD(v56) = v3;
     __asm { CPS.W           #0x13 }
     if ( (v41 & 1) != 0 )
-      KiReadDebugRegs(v52);
+      KiReadDebugRegs((int)v52);
   }
   v42 = 0;
   if ( (__mrc(15, 0, 1, 0, 2) & 0xF00000) != 0 )
@@ -175,5 +175,5 @@ void __fastcall __noreturn KiResetException(__int64 a1, __int64 a2)
     v48[4] = v56;
     v48[5] = v51;
   }
-  KiBugCheckDispatch(61, 0, 0, 0, v52[0]);
+  KiBugCheckDispatch(61, 0, 0, 0);
 }

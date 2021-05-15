@@ -216,7 +216,7 @@ LABEL_99:
   if ( v6 != 4 )
   {
     MiClearPfnImageVerified(a1, 12, v9, 0);
-    KeAcquireInStackQueuedSpinLockAtDpcLevel(&unk_640090, &v63, v56, v57);
+    KeAcquireInStackQueuedSpinLockAtDpcLevel(&dword_640090, &v63, v56, v57);
     *(_DWORD *)(a1 + 4) = -4;
     goto LABEL_20;
   }

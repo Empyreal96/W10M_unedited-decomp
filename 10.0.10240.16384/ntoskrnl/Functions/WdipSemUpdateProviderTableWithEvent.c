@@ -42,7 +42,7 @@ int __fastcall WdipSemUpdateProviderTableWithEvent(_DWORD *a1)
   }
   else
   {
-    if ( EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_INIT_PROVIDER_MAX) )
+    if ( EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_INIT_PROVIDER_MAX) )
       WdipSemWriteProviderLimitExceededEvent(a1);
     v2 = -1073741823;
   }

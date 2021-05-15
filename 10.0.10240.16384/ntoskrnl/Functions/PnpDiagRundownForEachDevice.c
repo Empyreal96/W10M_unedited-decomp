@@ -50,7 +50,7 @@ int __fastcall PnpDiagRundownForEachDevice(int a1)
               v11[14] = *(_DWORD *)(a1 + 24);
               v11[15] = 0;
               v11[17] = 0;
-              EtwWrite(PnpRundownEtwHandle, unk_649E8C, (int)KMPnPRundownEvt_SleepStudy_ConnectionResource, 0);
+              EtwWrite(PnpRundownEtwHandle, dword_649E8C, (int)KMPnPRundownEvt_SleepStudy_ConnectionResource, 0);
             }
             ++v5;
             v6 += 16;

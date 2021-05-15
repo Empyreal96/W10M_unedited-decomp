@@ -14,7 +14,7 @@ int __fastcall PfLogEvent(int a1, int a2, int a3, unsigned int a4)
   v5 = 8 * ((a4 + 15) >> 3);
   v14 = 0;
   v15[0] = 0;
-  v9 = PfFbLogEntryReserve(&unk_643A00, &v14, v15, v5);
+  v9 = PfFbLogEntryReserve(&qword_643A00, &v14, v15, v5);
   if ( v9 < 0 )
   {
     __dmb(0xBu);

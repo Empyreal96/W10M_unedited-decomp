@@ -215,7 +215,7 @@ int PopBatteryWorker()
       PopBatteryUpdateCompositeInformation(v6);
       v5 = 1;
       PopMaxChargeRate = 0;
-      dword_63294C = 0;
+      MEMORY[0x63294C] = 0;
       i = 1;
     }
     if ( (v8 & 4) != 0 || v5 )

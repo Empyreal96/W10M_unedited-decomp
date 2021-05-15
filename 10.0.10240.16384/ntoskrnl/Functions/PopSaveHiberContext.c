@@ -217,8 +217,8 @@ int __fastcall PopSaveHiberContext(unsigned int a1)
   *(_QWORD *)v34 = v35;
   *(_DWORD *)(v34 + 8) = v36;
   qword_61F128 = 0i64;
-  dword_61F130 = 0;
-  dword_61F134 = 0;
+  qword_61F130 = 0;
+  MEMORY[0x61F134] = 0;
   *(_DWORD *)(a1 + 204) = 0;
   *(_DWORD *)(a1 + 216) = 0;
   *(_DWORD *)(a1 + 220) = 0;

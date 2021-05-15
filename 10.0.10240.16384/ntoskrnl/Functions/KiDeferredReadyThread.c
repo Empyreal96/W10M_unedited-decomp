@@ -304,7 +304,7 @@ LABEL_30:
     v17 = *(_BYTE *)(a2 + 76);
     *(_BYTE *)(a2 + 76) = v17 & 0xFD;
     v18 = (unsigned __int8)(v17 & 2) >> 1;
-    v100[1] = unk_681FE4;
+    v100[1] = MEMORY[0x681FE4];
     if ( *(_DWORD *)(a2 + 352) != KiCpuSetSequence && (*(_DWORD *)(a2 + 76) & 8) == 0 )
       KiComputeThreadAffinity(a2);
     v19 = *(_DWORD *)(a2 + 356);

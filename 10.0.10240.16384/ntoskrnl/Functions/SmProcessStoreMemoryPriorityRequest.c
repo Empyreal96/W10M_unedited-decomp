@@ -65,7 +65,7 @@ int __fastcall SmProcessStoreMemoryPriorityRequest(unsigned int a1, int a2, int 
             KiStackAttachProcess(v11, 0, (int)_18);
           }
           v12 = v4;
-          v9 = SmpKeyedStoreEntryGet((int)&unk_636CC4, (int)&v12, 0, 0);
+          v9 = SmpKeyedStoreEntryGet((int)&byte_636CC4, (int)&v12, 0, 0);
           if ( v9 )
             v6 = SMKM_STORE_MGR<SM_TRAITS>::SmPrioritizeRegionsStore(
                    (int)SmGlobals,

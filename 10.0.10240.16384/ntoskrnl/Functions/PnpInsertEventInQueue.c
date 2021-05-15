@@ -86,7 +86,7 @@ int __fastcall PnpInsertEventInQueue(_DWORD *a1)
       v15 = 0;
     Template_z(
       Microsoft_Windows_Kernel_PnPHandle,
-      dword_649E54,
+      MEMORY[0x649E54],
       (int)KMPnPEvt_DeviceRemoval_Queue,
       (int)&Microsoft_Windows_Kernel_PnPHandle,
       *(unsigned __int16 **)(v15 + 24));

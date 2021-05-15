@@ -11,7 +11,7 @@ int CmpTraceHiveMountStart()
   v3[1] = 65796;
   v3[2] = 0;
   v3[3] = 0x40000000;
-  result = EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)v3);
+  result = EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)v3);
   if ( result )
     result = sub_7D2B14(result, v1, v2);
   return result;

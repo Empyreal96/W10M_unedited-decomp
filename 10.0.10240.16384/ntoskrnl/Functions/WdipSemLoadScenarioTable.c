@@ -144,7 +144,7 @@ LABEL_25:
                 goto LABEL_3;
               if ( v13 >= 0 )
                 break;
-              if ( EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_INIT_MISCONFIG) )
+              if ( EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_INIT_MISCONFIG) )
                 WdipSemWriteMisconfigEvent(v0, *(unsigned __int16 *)(v0 + 16), v14);
             }
             if ( (unsigned int)dword_61C880 >= 0x40 )
@@ -162,7 +162,7 @@ LABEL_25:
                 v0 = 0;
             }
           }
-          v16 = EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_INIT_SCENARIO_MAX);
+          v16 = EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_INIT_SCENARIO_MAX);
           v2 = v19;
           if ( !v16 )
             goto LABEL_4;

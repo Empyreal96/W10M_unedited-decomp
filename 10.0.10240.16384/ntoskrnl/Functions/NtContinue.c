@@ -12,7 +12,7 @@ int __fastcall NtContinue(int a1, unsigned __int8 a2)
   v3 = __mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0;
   v4 = a2;
   v5 = v2;
-  result = KiContinue(a1, &v7, v2);
+  result = KiContinue((_DWORD *)a1, (int)&v7, v2);
   if ( !result )
   {
     if ( (*(_DWORD *)(v5 + 132) & 0xF) != 0 )
@@ -21,8 +21,8 @@ int __fastcall NtContinue(int a1, unsigned __int8 a2)
       *(_BYTE *)(v3 + 346) = *(_BYTE *)(v5 + 19);
     }
     if ( v4 )
-      result = KeTestAlertThread(*(unsigned __int8 *)(v3 + 346));
-    KiExceptionRestoreFromService(result);
+      KeTestAlertThread(*(_BYTE *)(v3 + 346));
+    KiExceptionRestoreFromService();
   }
   return result;
 }

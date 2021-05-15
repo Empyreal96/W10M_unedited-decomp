@@ -154,7 +154,7 @@ LABEL_19:
     v4 = 0;
     v51 = 0;
     if ( (dword_636E9C & 0x10) != 0 )
-      SmKmEtwLogStoreChange((int *)&unk_636E90, *(_DWORD *)v8, SmEventStoreCreate);
+      SmKmEtwLogStoreChange((int *)&qword_636E90, *(_DWORD *)v8, SmEventStoreCreate);
     if ( (*(_WORD *)(v8 + 12) & 0x800) != 0 )
     {
       KeInitializeApc(v8 + 40, *(_DWORD *)(a3 + 4), 0, (int)SmWdWritesApcRoutine, (int)PopPoCoalescinCallback, 0, 0, 0);

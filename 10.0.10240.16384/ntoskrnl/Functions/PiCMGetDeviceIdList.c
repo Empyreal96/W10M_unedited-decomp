@@ -120,6 +120,6 @@ LABEL_24:
   if ( v10 && *(_BYTE *)((v17 & 0xFFFFFFC0) + 0x15A) )
     ExFreePoolWithTag(v10);
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x1000000) != 0 )
-    Template_q(Microsoft_Windows_Kernel_PnPHandle, dword_649E54, (int)KMPnPEvt_CfgMgr_DeviceList_Stop);
+    Template_q(Microsoft_Windows_Kernel_PnPHandle, MEMORY[0x649E54], (int)KMPnPEvt_CfgMgr_DeviceList_Stop);
   return v9;
 }

@@ -106,8 +106,8 @@ int __fastcall KiInitializeUserApc(int a1, int a2, int a3, int a4, int a5, int a
     v43 = v19;
     for ( j = (char *)v19; (unsigned int)j < v19 + 32; j += 128 )
       __pld(j);
-    v22 = dword_641CF0;
-    v23 = dword_641CF4;
+    v22 = qword_641CF0;
+    v23 = MEMORY[0x641CF4];
     v24 = dword_641CF8;
     while ( v11 >= 8 )
     {

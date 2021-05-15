@@ -107,7 +107,7 @@ LABEL_72:
           v11 = 16;
         KeQueryPerformanceCounter(v30, 0);
         PopShutdownButtonPressTime = v30[0];
-        dword_61F7E4 = v30[1];
+        MEMORY[0x61F7E4] = v30[1];
       }
       PopDiagTraceShutdownAction(6, v11, *a1);
     }

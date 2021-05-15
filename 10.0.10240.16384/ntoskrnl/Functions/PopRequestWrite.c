@@ -155,10 +155,10 @@ LABEL_2:
       *(_DWORD *)(a1 + 232) = v53;
       *(_DWORD *)(a1 + 236) = v28;
       HIDWORD(v30) = *(_DWORD *)(a1 + 252);
-      v31 = dword_61EEAC;
+      v31 = MEMORY[0x61EEAC];
       v32 = v30 + __PAIR64__(v23, v24);
-      if ( (v30 + __PAIR64__(v23, v24)) >> 32 > (unsigned int)dword_61EEAC
-        || HIDWORD(v32) >= dword_61EEAC && (v31 = dword_61EEA8, (unsigned int)v32 > dword_61EEA8) )
+      if ( (v30 + __PAIR64__(v23, v24)) >> 32 > (unsigned int)MEMORY[0x61EEAC]
+        || HIDWORD(v32) >= MEMORY[0x61EEAC] && (v31 = qword_61EEA8, (unsigned int)v32 > qword_61EEA8) )
       {
         HIDWORD(v30) = *(_DWORD *)(a1 + 116);
         if ( HIDWORD(v30) == 4 || HIDWORD(v30) == 5 )
@@ -168,7 +168,7 @@ LABEL_2:
         }
         v52 = MmGetNumberOfPhysicalPages(0);
         IoAddTriageDumpDataBlock((int)&v52, 4);
-        KeBugCheckEx(160, 11, dword_61EEA8, *(_DWORD *)(a1 + 116), v51);
+        KeBugCheckEx(160, 11, qword_61EEA8, *(_DWORD *)(a1 + 116), v51);
       }
       PopHiberChecksumHiberFileData(a1, 1, v30, HIDWORD(v30), v27, v29);
       v33 = v27 & 0xFFF;

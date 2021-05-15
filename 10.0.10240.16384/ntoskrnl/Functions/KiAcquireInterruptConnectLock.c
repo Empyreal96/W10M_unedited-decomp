@@ -17,7 +17,7 @@ int __fastcall KiAcquireInterruptConnectLock(int a1, _BYTE *a2, int a3, int a4)
   v9 = 0;
   v8 = *(unsigned __int8 *)(v5 + 1052);
   v7 = *(_BYTE **)(v5 + 1048);
-  KeSetSystemGroupAffinityThread(&v7, a3);
+  KeSetSystemGroupAffinityThread((int)&v7, (_DWORD *)a3);
   result = KfRaiseIrql(15);
   *a2 = result;
   return result;

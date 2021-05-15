@@ -30,7 +30,7 @@ int __fastcall CcScheduleLazyWriteScan(int a1, int a2)
   {
     if ( byte_632770 )
       goto LABEL_7;
-    KiSetTimerEx((int)&unk_632740, 0, *(__int64 *)CcFirstDelay, 0, 0, (int)&LazyWriter);
+    KiSetTimerEx((int)&dword_632740, 0, *(__int64 *)CcFirstDelay, 0, 0, (int)&LazyWriter);
   }
   v3 = (unsigned __int8)CcCoalescingState;
 LABEL_7:

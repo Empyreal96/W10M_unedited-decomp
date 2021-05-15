@@ -17,7 +17,7 @@ int __fastcall WdipSemLogInflightLimitExceededInformation(int a1, int a2, int a3
   memset(v15, 0, 504);
   if ( a1 && a3 )
   {
-    if ( EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_SCENARIO_INFLIGHT_MAX)
+    if ( EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_SCENARIO_INFLIGHT_MAX)
       || ((int (*)(void))WdipSemSqmEnabled)() )
     {
       v7 = (int *)WdipSemEnabledInstanceTable;
@@ -39,7 +39,7 @@ LABEL_14:
             v8 = v14;
             if ( !v14 )
               goto LABEL_14;
-            v9 = EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_SCENARIO_INFLIGHT_MAX);
+            v9 = EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_SCENARIO_INFLIGHT_MAX);
             if ( v9 )
               v9 = WdipSemWriteInflightLimitExceededEvent(a1, a2, a3, v15);
             if ( WdipSemSqmEnabled(v9) )

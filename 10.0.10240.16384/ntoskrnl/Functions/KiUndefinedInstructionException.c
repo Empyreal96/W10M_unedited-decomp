@@ -123,11 +123,11 @@ int __fastcall KiUndefinedInstructionException(__int64 a1, __int64 a2, int a3, u
     v48 = *v15 | (v48 << 16);
   }
   if ( HIBYTE(v48) == 251 && ((v48 >> 20) & 0xD) == 9 && ((unsigned __int8)v48 & BYTE1(v48) & 0xF0) == 240 )
-    return KiEmulateDivide(a1, HIDWORD(a1), a2, HIDWORD(a2), a3, a4);
+    return KiEmulateDivide(a1, SHIDWORD(a1), a2, SHIDWORD(a2), a3, a4, a5, a6, a7, a8, a9);
   if ( (v48 & 0xE8000000) != -402653184 )
     goto LABEL_18;
   if ( (__mrc(15, 0, 1, 0, 2) & 0xF00000) == 0 )
-    return KiEnableVfp(a1, HIDWORD(a1), a2, HIDWORD(a2), a3, a4);
+    return KiEnableVfp();
   __asm { VMRS            R6, FPEXC }
   if ( (_R6 & 0xA0000000) == 0 )
   {
@@ -160,7 +160,7 @@ LABEL_18:
       LODWORD(v79) = v15;
       __asm { CPS.W           #0x13 }
       if ( (v64 & 1) != 0 )
-        KiReadDebugRegs(v75);
+        KiReadDebugRegs((int)v75);
     }
     v65 = 0;
     if ( (__mrc(15, 0, 1, 0, 2) & 0xF00000) != 0 )
@@ -240,11 +240,15 @@ LABEL_18:
   }
   _R7 &= 0xFFFF00FF;
   __asm { VMSR            FPSCR, R7 }
-  return ((int (__fastcall *)(_DWORD, _DWORD, _DWORD, _DWORD, int, unsigned int))(v15 - 1))(
+  return ((int (__fastcall *)(_DWORD, _DWORD, _DWORD, _DWORD, int, unsigned int, int, int, int, int))(v15 - 1))(
            a1,
            HIDWORD(a1),
            a2,
            HIDWORD(a2),
            a3,
-           a4);
+           a4,
+           a5,
+           a6,
+           a7,
+           a8);
 }

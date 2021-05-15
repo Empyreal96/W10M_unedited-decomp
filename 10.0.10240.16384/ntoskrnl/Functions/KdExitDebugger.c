@@ -52,7 +52,7 @@ int __fastcall KdExitDebugger(int a1, int a2, int a3, int a4)
     v17 = HIDWORD(KdTimerStop);
     KdTimerStart = KdTimerStop;
   }
-  dword_62784C = v17;
+  MEMORY[0x62784C] = v17;
   if ( !PoHiberInProgress )
     return sub_903A50(v16);
   result = VfIsVerifierEnabled();

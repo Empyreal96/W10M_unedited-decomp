@@ -14,7 +14,7 @@ int __fastcall SmpPageWrite(unsigned int *a1, _DWORD *a2, unsigned int a3, int a
   v10 = -1;
   if ( (a3 & 0x3F) == 32 && (a2[1] & 3) == 0 )
   {
-    v11 = SmpKeyedStoreReference((unsigned int *)&unk_636CC4, (int)SmGlobals, *a2);
+    v11 = SmpKeyedStoreReference((unsigned int *)&byte_636CC4, (int)SmGlobals, *a2);
     v10 = v11;
     if ( v11 != -1 )
       v7 = v11 & 0x1F | v7 & 0xFFFFFFC0;

@@ -65,12 +65,12 @@ int __fastcall IoReuseIrp(int a1, int a2)
         || (!v14 || (*(_WORD *)(v14 + 2) & 1) == 0 ? (v15 = 0) : (v15 = 1),
             !v15
          || ((result = IoTraceHandle, !*(_QWORD *)&IoTraceHandle)
-          || (result = EtwEventEnabled(IoTraceHandle, dword_631B04, IoTrace_KernelIo_ReuseIrp)) == 0 ? (v16 = 0) : (v16 = 1),
+          || (result = EtwEventEnabled(IoTraceHandle, MEMORY[0x631B04], IoTrace_KernelIo_ReuseIrp)) == 0 ? (v16 = 0) : (v16 = 1),
              v16)) )
       {
         EtwActivityIdControl(3, &v19);
         v17 = *(_QWORD *)&IoTraceHandle;
-        if ( *(_QWORD *)&IoTraceHandle && EtwEventEnabled(IoTraceHandle, dword_631B04, IoTrace_KernelIo_ReuseIrp) )
+        if ( *(_QWORD *)&IoTraceHandle && EtwEventEnabled(IoTraceHandle, MEMORY[0x631B04], IoTrace_KernelIo_ReuseIrp) )
           EtwWriteTransfer(v17, SHIDWORD(v17), (int)IoTrace_KernelIo_ReuseIrp);
         result = IoSetActivityIdIrp(a1, &v19);
       }

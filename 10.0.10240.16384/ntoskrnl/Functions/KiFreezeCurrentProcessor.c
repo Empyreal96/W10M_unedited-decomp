@@ -11,6 +11,7 @@ int __fastcall KiFreezeCurrentProcessor(int a1, int a2, int a3, int a4)
   __int64 *v11; // [sp+7Ch] [bp-3Ch]
   void *v12; // [sp+80h] [bp-38h]
   unsigned int v13; // [sp+84h] [bp-34h]
+  char v14[48]; // [sp+88h] [bp-30h] BYREF
   __int64 savedregs; // [sp+B8h] [bp+0h] BYREF
 
   v7[24] = a1;
@@ -25,5 +26,5 @@ int __fastcall KiFreezeCurrentProcessor(int a1, int a2, int a3, int a4)
   v13 = __get_CPSR() | 0x20;
   v7[4] = 0;
   v7[5] = 0;
-  return KiFreezeTargetExecution();
+  return KiFreezeTargetExecution((int)v7, (int)v14);
 }

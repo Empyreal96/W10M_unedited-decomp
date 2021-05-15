@@ -2,8 +2,8 @@
  
 int KxDispatchInterrupt()
 {
-  unsigned int v0; // r4
-  int v1; // r5
+  int v0; // r4
+  unsigned int v1; // r5
   unsigned __int64 *v2; // r2
   unsigned __int64 v3; // kr00_8
   unsigned __int64 v4; // r0

@@ -1,6 +1,6 @@
 // TmpBlockOnResourceManager 
  
-int TmpBlockOnResourceManager()
+int __fastcall TmpBlockOnResourceManager(int a1, int a2)
 {
-  return TmpGetNotificationResourceManagerWorker();
+  return TmpGetNotificationResourceManagerWorker(a1, a2);
 }

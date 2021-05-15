@@ -32,15 +32,15 @@ int __fastcall PopFanUpdateCsState(int a1)
       if ( byte_61E664 )
         PopFanEndCsFanPeriod();
       byte_61E665 = 0;
-      dword_61E670 = 0;
-      dword_61E674 = 0;
+      qword_61E670 = 0;
+      MEMORY[0x61E674] = 0;
     }
   }
   else if ( !byte_61E665 )
   {
     byte_61E665 = 1;
     LODWORD(v11) = KeQueryInterruptTime();
-    *(_QWORD *)&dword_61E670 = v11;
+    *(_QWORD *)&qword_61E670 = v11;
   }
   dword_61E624 = 0;
   __pld(&PopFanLock);

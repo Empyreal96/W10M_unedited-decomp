@@ -117,7 +117,7 @@ int __fastcall WdipSemWriteSemActionsEvent(int a1, int a2)
     else
     {
 LABEL_11:
-      v5 = WdipSemWriteEvent(WdipSemRegHandle, dword_61CB14, a1, a2 + 8);
+      v5 = WdipSemWriteEvent(WdipSemRegHandle, MEMORY[0x61CB14], a1, a2 + 8);
     }
   }
   if ( v3 )

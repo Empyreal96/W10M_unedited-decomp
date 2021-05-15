@@ -16,8 +16,8 @@ int __fastcall KeQueryBootTimeValues(_DWORD *a1, _DWORD *a2, _DWORD *a3)
   if ( a1[1] != MEMORY[0xFFFF901C] )
     return sub_50B518(v6);
   *a2 = KeBootTime;
-  a2[1] = dword_681E0C;
+  a2[1] = MEMORY[0x681E0C];
   *a3 = KeBootTimeBias;
-  a3[1] = dword_68202C;
+  a3[1] = MEMORY[0x68202C];
   return KfLowerIrql(v6);
 }

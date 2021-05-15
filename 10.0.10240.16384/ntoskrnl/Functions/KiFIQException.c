@@ -46,13 +46,13 @@ void __fastcall __noreturn KiFIQException(__int64 a1, __int64 a2, int a3, unsign
   _QWORD *v50; // r12
   __int64 v51; // r2
   unsigned __int64 v52; // r2
-  __int64 v53; // r2
+  unsigned __int64 v53; // r2
   int v54[24]; // [sp+0h] [bp-1A4h] BYREF
   __int64 v55; // [sp+60h] [bp-144h]
   __int64 v56; // [sp+68h] [bp-13Ch]
   unsigned __int64 v57; // [sp+70h] [bp-134h]
   __int64 v58; // [sp+78h] [bp-12Ch]
-  __int64 v59; // [sp+80h] [bp-124h]
+  unsigned __int64 v59; // [sp+80h] [bp-124h]
   char v60; // [sp+88h] [bp-11Ch] BYREF
   int v61; // [sp+8Ch] [bp-118h]
   __int64 v62; // [sp+98h] [bp-10Ch]
@@ -98,8 +98,7 @@ void __fastcall __noreturn KiFIQException(__int64 a1, __int64 a2, int a3, unsign
   v56 = a2;
   v57 = __PAIR64__(&a3, v4);
   LODWORD(v58) = v5;
-  LODWORD(v59) = (a3 | (a4 >> 5) & 1) - 4;
-  HIDWORD(v59) = a4;
+  v59 = __PAIR64__(a4, a3) | (a4 >> 5) & 1;
   v54[3] = (int)KiResetException;
   v54[4] = 0;
   if ( (a4 & 0xF) == 0 )
@@ -112,7 +111,7 @@ void __fastcall __noreturn KiFIQException(__int64 a1, __int64 a2, int a3, unsign
     LODWORD(v58) = v5;
     __asm { CPS.W           #0x13 }
     if ( (v43 & 1) != 0 )
-      KiReadDebugRegs(v54);
+      KiReadDebugRegs((int)v54);
   }
   v44 = 0;
   if ( (__mrc(15, 0, 1, 0, 2) & 0xF00000) != 0 )
@@ -175,5 +174,5 @@ void __fastcall __noreturn KiFIQException(__int64 a1, __int64 a2, int a3, unsign
     v50[4] = v58;
     v50[5] = v53;
   }
-  KiBugCheckDispatch(61, 0, 0, 0, v54[0]);
+  KiBugCheckDispatch(61, 0, 0, 0);
 }

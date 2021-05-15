@@ -29,7 +29,7 @@ int __fastcall PpmTestAndLockProcessor(_DWORD *a1, int a2, unsigned int *a3)
   v23[4] = v5;
   LOBYTE(v23[6]) = 1;
   v23[2] = PopIdleTransitionTimeout;
-  v23[3] = dword_6824EC;
+  v23[3] = MEMORY[0x6824EC];
   if ( (v7 & 0xFF000000) == 0x2000000 )
     return sub_522F24(v9);
   v11 = HIBYTE(v7);

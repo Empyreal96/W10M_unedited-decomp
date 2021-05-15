@@ -23,7 +23,7 @@ int __fastcall SmProcessGlobalCacheStatsRequest(unsigned int a1, int a2, _DWORD 
   memmove((int)v11, a1, 0x388u);
   if ( LOBYTE(v11[0]) != 5 || (v11[0] & 0xFFFFFF00) != 0 )
     return -1073741811;
-  SmpCacheStatsCopy(SmGlobals, &v11[2], &unk_636EA8);
+  SmpCacheStatsCopy(SmGlobals, &v11[2], &dword_636EA8);
   v9 = 0;
   memmove(a1, (int)v11, 0x388u);
   *a3 = 904;

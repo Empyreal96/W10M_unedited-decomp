@@ -108,8 +108,8 @@ LABEL_14:
   }
   if ( (dword_636E9C & 0x10) != 0 )
   {
-    SmKmEtwLogStoreStats((int *)&unk_636E90, *v3);
-    SmKmEtwLogStoreChange((int *)&unk_636E90, (int)*v3, SmEventStoreDelete);
+    SmKmEtwLogStoreStats((int *)&qword_636E90, *v3);
+    SmKmEtwLogStoreChange((int *)&qword_636E90, (int)*v3, SmEventStoreDelete);
   }
   (*(void (__fastcall **)(int, unsigned int, int))(a1 + 3072))(a1, v12, 2);
   *v3 = 0;

@@ -41,7 +41,7 @@ int __fastcall MiCountExistingPageTables(_DWORD *a1, unsigned int a2, unsigned i
         }
         else
         {
-          v7 += MiCountExistingPageTables(v6 << 10, (v6 << 10) + 4092, a3, a4 - 1, a5);
+          v7 += MiCountExistingPageTables((_DWORD *)(v6 << 10), (v6 << 10) + 4092, a3, a4 - 1, a5);
         }
       }
     }

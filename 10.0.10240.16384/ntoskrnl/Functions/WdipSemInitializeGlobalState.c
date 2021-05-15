@@ -6,7 +6,7 @@ _BYTE *WdipSemInitializeGlobalState()
 
   WdipSemPushLock = 0;
   WdipSemRegHandle = 0;
-  dword_61CB14 = 0;
+  MEMORY[0x61CB14] = 0;
   WdipSemEnabled = 0;
   WdipSemTimeoutEnabled = 0;
   WdipSemTimeoutValue = 0;

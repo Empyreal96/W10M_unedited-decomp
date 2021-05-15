@@ -7,7 +7,7 @@ int __fastcall KiCustomRecurseRoutine9(int a1, unsigned int *a2)
 
   result = a1 - 1;
   if ( result )
-    result = KiCustomRecurseRoutine0();
+    result = KiCustomRecurseRoutine0(result, a2);
   v3 = __ldrex(a2);
   __clrex();
   return result;

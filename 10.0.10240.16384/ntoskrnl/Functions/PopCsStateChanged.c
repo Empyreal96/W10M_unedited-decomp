@@ -29,7 +29,7 @@ int __fastcall PopCsStateChanged(int a1)
   else
   {
     PopLastCsEnterTime = 0;
-    dword_61F824 = 0;
+    MEMORY[0x61F824] = 0;
     PopExecutionTimeoutProcessed = 0;
     PopEnableExecutionRequiredPowerRequests(1);
   }

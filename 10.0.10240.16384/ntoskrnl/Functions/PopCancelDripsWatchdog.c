@@ -21,8 +21,8 @@ void PopCancelDripsWatchdog()
     unk_637458 = 0;
     unk_63745C = 0;
     dword_63744C = 0;
-    unk_637460 = 0;
-    unk_637464 = 0;
+    qword_637460 = 0;
+    MEMORY[0x637464] = 0;
     unk_637468 = 0;
     unk_63746C = 0;
     dword_637470 = 0;

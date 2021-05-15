@@ -23,7 +23,7 @@ int __fastcall PfpRpControlRequest(int a1, char a2)
     if ( PfpRpControlRequestVerify(v7) )
       v3 = -1073741701;
     else
-      v3 = PfpRpControlRequestPerform(&unk_6372E0, v5);
+      v3 = PfpRpControlRequestPerform(&dword_6372E0, v5);
   }
   if ( v5 && v5 != v8 )
     ExFreePoolWithTag((unsigned int)v5);

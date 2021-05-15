@@ -15,6 +15,6 @@ void __fastcall __noreturn _longjmp_internal(_DWORD *a1, int a2)
     v2[2] = 0;
     v2[3] = 0;
     v2[4] = 1;
-    a1 = (_DWORD *)RtlUnwindEx(*a1, a1[10], v2, a2, &v3, 0);
+    a1 = (_DWORD *)RtlUnwindEx(*a1, a1[10], (int)v2, a2, (int)&v3, 0);
   }
 }

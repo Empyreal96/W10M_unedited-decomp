@@ -1,14 +1,16 @@
 // PopWdiTimerWorkerThread 
  
-int PopWdiTimerWorkerThread()
+void PopWdiTimerWorkerThread()
 {
-  int v0; // r0
-  int v1; // r0
-
-  v0 = KeWaitForSingleObject(&PopWdiTimerMutex, 0, 0);
-  v1 = PopDiagTraceSleepStudyStop(v0);
+  KeWaitForSingleObject((unsigned int)&PopWdiTimerMutex, 0, 0, 0, 0);
+  PopDiagTraceSleepStudyStop();
   if ( PopWdiNewScenarioWaiting )
-    return sub_50FAFC(v1);
-  PopWdiTimerQueued = 0;
-  return KeReleaseMutant(&PopWdiTimerMutex, 1);
+  {
+    sub_50FAFC();
+  }
+  else
+  {
+    PopWdiTimerQueued = 0;
+    KeReleaseMutant((unsigned int)&PopWdiTimerMutex, 1, 0, 0);
+  }
 }

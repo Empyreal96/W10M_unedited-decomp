@@ -157,8 +157,8 @@ int ExpTimeRefreshWork()
     v91 = 1;
     __dmb(0xBu);
     do
-      v2 = __ldrexd((unsigned __int64 *)&dword_922C10);
-    while ( __strexd(v2 + 1, (unsigned __int64 *)&dword_922C10) );
+      v2 = __ldrexd((unsigned __int64 *)&qword_922C10);
+    while ( __strexd(v2 + 1, (unsigned __int64 *)&qword_922C10) );
     __dmb(0xBu);
     v3 = __mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0;
     --*(_WORD *)(v3 + 308);
@@ -176,8 +176,8 @@ int ExpTimeRefreshWork()
       v7 = 0;
       v8 = 0;
       v9 = &v96;
-      v90 = *(_QWORD *)&dword_922C10;
-      v96 = *(_QWORD *)&dword_922C10;
+      v90 = *(_QWORD *)&qword_922C10;
+      v96 = *(_QWORD *)&qword_922C10;
       v10 = 8;
       do
       {

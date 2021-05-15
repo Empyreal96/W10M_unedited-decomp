@@ -530,7 +530,7 @@ LABEL_67:
                   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x800000) != 0 )
                     Template_qzq(
                       Microsoft_Windows_Kernel_PnPHandle,
-                      dword_649E54,
+                      MEMORY[0x649E54],
                       v73,
                       (int)&Microsoft_Windows_Kernel_PnPHandle,
                       (int)v45,

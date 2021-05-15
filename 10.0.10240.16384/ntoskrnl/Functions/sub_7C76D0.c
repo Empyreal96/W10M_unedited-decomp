@@ -243,7 +243,11 @@ LABEL_22:
             v3 = 1;
           }
           if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x400000) != 0 )
-            Template_p(Microsoft_Windows_Kernel_PnPHandle, dword_649E54, (int)KMPnPEvt_DevQuery_ProcessingStart, v0[3]);
+            Template_p(
+              Microsoft_Windows_Kernel_PnPHandle,
+              MEMORY[0x649E54],
+              (int)KMPnPEvt_DevQuery_ProcessingStart,
+              v0[3]);
           v7 = __mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0;
           --*(_WORD *)(v7 + 308);
           v8 = (unsigned __int8 *)(v0 + 8);
@@ -320,7 +324,11 @@ LABEL_114:
               KiCheckForKernelApcDelivery(v24);
           }
           if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x400000) != 0 )
-            Template_p(Microsoft_Windows_Kernel_PnPHandle, dword_649E54, (int)KMPnPEvt_DevQuery_ProcessingStop, v0[3]);
+            Template_p(
+              Microsoft_Windows_Kernel_PnPHandle,
+              MEMORY[0x649E54],
+              (int)KMPnPEvt_DevQuery_ProcessingStop,
+              v0[3]);
           if ( v3 )
             IoClearActivityIdThread(v81);
         }

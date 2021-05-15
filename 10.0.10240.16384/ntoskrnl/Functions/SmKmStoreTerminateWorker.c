@@ -75,7 +75,7 @@ LABEL_10:
     v28[0] = (int)v31;
     if ( (dword_636E9C & 0x40) != 0 )
     {
-      v12 = (int *)&unk_636E90;
+      v12 = (int *)&qword_636E90;
       v13 = v28[4];
       v14 = (char *)v30 + v28[4];
       if ( a1 != -32 )

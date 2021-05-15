@@ -190,8 +190,8 @@ LABEL_2:
   *(_DWORD *)(v8 + 124) = v39;
   *(_DWORD *)(v8 + 100) = KeNumberProcessors_0;
   *(_DWORD *)(v8 + 104) = NtGlobalFlag;
-  *(_DWORD *)(v8 + 112) = dword_6337C8;
-  *(_DWORD *)(v8 + 116) = dword_6337CC;
+  *(_DWORD *)(v8 + 112) = qword_6337C8;
+  *(_DWORD *)(v8 + 116) = MEMORY[0x6337CC];
   *(_DWORD *)(v8 + 520) = dword_68127C;
   *(_DWORD *)(v8 + 144) = v34;
   *(_DWORD *)(v8 + 128) = dword_681288;

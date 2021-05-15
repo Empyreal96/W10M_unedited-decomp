@@ -23,6 +23,6 @@ int __fastcall NtSetContextThread(int a1, int a2)
   v7[4] = 4;
   v7[5] = 0;
   v7[0] = v4;
-  EtwWrite(EtwApiCallsProvRegHandle, dword_61A654, (int)KERNEL_AUDIT_API_SETCONTEXTTHREAD, 0);
+  EtwWrite(EtwApiCallsProvRegHandle, MEMORY[0x61A654], (int)KERNEL_AUDIT_API_SETCONTEXTTHREAD, 0);
   return v4;
 }

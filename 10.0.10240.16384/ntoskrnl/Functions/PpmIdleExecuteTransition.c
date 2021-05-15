@@ -322,7 +322,7 @@ LABEL_6:
         v210[4] = v135;
         v137 = v135 + 2944;
         v210[2] = PopIdleTransitionTimeout;
-        v210[3] = dword_6824EC;
+        v210[3] = MEMORY[0x6824EC];
         while ( 1 )
         {
           result = (*(int (__fastcall **)(_DWORD))(v136 + 112))(*(_DWORD *)(v136 + 120));
@@ -966,7 +966,7 @@ LABEL_91:
           v205 = 0;
           v206 = 1;
           v207 = 0;
-          v203 = dword_6824F4;
+          v203 = MEMORY[0x6824F4];
           v204 = 0;
           v90 = (unsigned int *)(v89 + 188);
           v91 = *(_DWORD *)(v89 + 188);

@@ -565,7 +565,7 @@ LABEL_170:
     KeQueryPerformanceCounter(v94, 0);
     dword_61F110 = v94[0];
     dword_61F114 = v94[1];
-    dword_61EEB8 = PopQpcTimeInMs(&dword_61F108, &dword_61F110);
+    dword_61EEB8 = PopQpcTimeInMs(&qword_61F108, &dword_61F110);
   }
   if ( v7 >= 0 )
   {
@@ -666,6 +666,6 @@ LABEL_193:
   if ( v7 >= 0 )
     PpmPerfReApplyStates();
   dword_61EC74 = 11;
-  *(_QWORD *)&dword_61F0A0 = PopCaptureTimeOnProcZero();
+  *(_QWORD *)&qword_61F0A0 = PopCaptureTimeOnProcZero();
   return v7;
 }

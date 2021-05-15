@@ -46,7 +46,7 @@ void __fastcall __noreturn KiPrefetchAbortException(__int64 a1, __int64 a2, int 
   _QWORD *v50; // r12
   __int64 v51; // r2
   unsigned __int64 v52; // r2
-  __int64 v53; // r2
+  unsigned __int64 v53; // r2
   unsigned int v54; // r2
   int v55; // r1
   int v56[24]; // [sp+0h] [bp-1A4h] BYREF
@@ -54,7 +54,7 @@ void __fastcall __noreturn KiPrefetchAbortException(__int64 a1, __int64 a2, int 
   __int64 v58; // [sp+68h] [bp-13Ch]
   unsigned __int64 v59; // [sp+70h] [bp-134h]
   __int64 v60; // [sp+78h] [bp-12Ch]
-  __int64 v61; // [sp+80h] [bp-124h]
+  unsigned __int64 v61; // [sp+80h] [bp-124h]
   char v62; // [sp+88h] [bp-11Ch] BYREF
   int v63; // [sp+8Ch] [bp-118h]
   __int64 v64; // [sp+98h] [bp-10Ch]
@@ -100,8 +100,7 @@ void __fastcall __noreturn KiPrefetchAbortException(__int64 a1, __int64 a2, int 
   v58 = a2;
   v59 = __PAIR64__(&a3, v4);
   LODWORD(v60) = v5;
-  LODWORD(v61) = (a3 | (a4 >> 5) & 1) - 4;
-  HIDWORD(v61) = a4;
+  v61 = __PAIR64__(a4, a3) | (a4 >> 5) & 1;
   v56[3] = (int)KiResetException;
   v56[4] = 1;
   if ( (a4 & 0xF) == 0 )
@@ -114,7 +113,7 @@ void __fastcall __noreturn KiPrefetchAbortException(__int64 a1, __int64 a2, int 
     LODWORD(v60) = v5;
     __asm { CPS.W           #0x13 }
     if ( (v43 & 1) != 0 )
-      KiReadDebugRegs(v56);
+      KiReadDebugRegs((int)v56);
   }
   v44 = 0;
   if ( (__mrc(15, 0, 1, 0, 2) & 0xF00000) != 0 )

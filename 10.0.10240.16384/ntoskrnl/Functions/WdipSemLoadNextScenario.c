@@ -179,7 +179,7 @@ LABEL_55:
           v23 = *(_DWORD *)(a3 + 52);
           if ( v23 >= 0x10 )
           {
-            if ( EtwEventEnabled(WdipSemRegHandle, dword_61CB14, (int)WDI_SEM_EVENT_INIT_SCENARIO_END_EVENT_MAX) )
+            if ( EtwEventEnabled(WdipSemRegHandle, MEMORY[0x61CB14], (int)WDI_SEM_EVENT_INIT_SCENARIO_END_EVENT_MAX) )
             {
               v24 = WDI_SEM_EVENT_INIT_SCENARIO_END_EVENT_MAX;
 LABEL_76:
@@ -218,7 +218,7 @@ LABEL_76:
             {
               if ( !EtwEventEnabled(
                       WdipSemRegHandle,
-                      dword_61CB14,
+                      MEMORY[0x61CB14],
                       (int)WDI_SEM_EVENT_INIT_SCENARIO_CONTEXT_PROVIDER_MAX) )
                 goto LABEL_24;
               v24 = WDI_SEM_EVENT_INIT_SCENARIO_CONTEXT_PROVIDER_MAX;

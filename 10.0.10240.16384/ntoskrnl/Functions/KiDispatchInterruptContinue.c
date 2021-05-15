@@ -2,9 +2,10 @@
  
 int KiDispatchInterruptContinue()
 {
-  unsigned int v0; // r3
+  int v0; // r3
   int v1; // r0
-  int (__fastcall *v3)(int); // [sp-4h] [bp-4h]
+  int v3; // r0
+  int (__fastcall *v4)(int); // [sp-4h] [bp-4h]
 
   v0 = ((unsigned int)KeGetPcr() & 0xFFFFF000) + 1408;
   __enable_irq();
@@ -12,16 +13,17 @@ int KiDispatchInterruptContinue()
   {
     *(_BYTE *)(v0 + 1753) = 0;
     v1 = KiQuantumEnd();
-    return v3(v1);
+    return v4(v1);
   }
   v1 = *(_DWORD *)(v0 + 8);
   if ( !v1 )
-    return v3(v1);
-  if ( (*(_BYTE *)(*(_DWORD *)(v0 + 4) + 2) & 4) != 0 )
+    return v4(v1);
+  v3 = *(_DWORD *)(v0 + 4);
+  if ( (*(_BYTE *)(v3 + 2) & 4) != 0 )
   {
-    v1 = KiDeferGroupSchedulingPreemption();
+    v1 = KiDeferGroupSchedulingPreemption(v3, v0);
     if ( v1 )
-      return v3(v1);
+      return v4(v1);
   }
   return KxDispatchInterrupt();
 }

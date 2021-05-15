@@ -199,7 +199,7 @@ LABEL_12:
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x4000000) != 0 )
     Template_qz(
       Microsoft_Windows_Kernel_PnPHandle,
-      dword_649E54,
+      MEMORY[0x649E54],
       (int)KMPnPEvt_ProcessDeviceStart_Stop,
       *(_DWORD *)(a1 + 24),
       3,

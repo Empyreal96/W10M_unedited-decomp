@@ -22,8 +22,8 @@ _DWORD *__fastcall SmWdInitialize(_BYTE *a1, unsigned int a2)
   *(_DWORD *)(DWORD2(v2) + 88) = 0;
   *(_QWORD *)v2 = *(_QWORD *)((char *)&v2 - 4);
   WatchdogReadsQueueTimeout = dword_989680;
-  unk_641604 = 0;
+  MEMORY[0x641604] = 0;
   WatchdogWritesQueueTimeout.LowPart = (unsigned int)dword_989680;
-  dword_64160C = 0;
+  MEMORY[0x64160C] = 0;
   return result;
 }

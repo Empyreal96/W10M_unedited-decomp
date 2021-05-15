@@ -1,6 +1,6 @@
 // __memcpy_reverse 
  
-int __fastcall _memcpy_reverse(int result, int a2, unsigned int a3)
+void __fastcall _memcpy_reverse(int result, int a2, unsigned int a3)
 {
   unsigned int v3; // r3
   char *v4; // r1
@@ -12,9 +12,9 @@ int __fastcall _memcpy_reverse(int result, int a2, unsigned int a3)
   if ( a3 >= 8 )
   {
     if ( result + a3 )
-      result = _memcpy_reverse_large_neon();
+      _memcpy_reverse_large_neon(result, (int)v4, a3, result + a3);
     else
-      result = ((int (*)(void))*(&off_4236E4 + 2 * (byte_60E000 & 3)))();
+      ((void (*)(void))*(&off_4236E4 + 2 * (byte_60E000 & 3)))();
   }
   else
   {
@@ -25,5 +25,4 @@ int __fastcall _memcpy_reverse(int result, int a2, unsigned int a3)
       *(_BYTE *)(v3 - 1) = v5;
     }
   }
-  return result;
 }

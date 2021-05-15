@@ -25,7 +25,7 @@ int __fastcall MiAddWorkingSetPage(int a1)
   if ( v4 > 1048574 - 0x1000 / v2 )
     return 0;
   v5 = (unsigned int *)(((((v3 + v4 * v2) >> 10) & 0xFFFFFFFC) + 4) << 10);
-  if ( (unsigned int)(v5 + 1024) >= v1[13] || !MiMapNewWorkingSetPage(a1, v5) )
+  if ( (unsigned int)(v5 + 1024) >= v1[13] || !MiMapNewWorkingSetPage(a1, (unsigned int)v5) )
     return 0;
   if ( !v2 )
     __brkdiv0();

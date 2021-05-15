@@ -14,7 +14,7 @@ int __fastcall CmpTraceHiveLoadStart(int a1, int a2, int a3, int a4, char a5, in
   var58[1] = 327940;
   var58[2] = 0;
   var58[3] = 0x40000000;
-  result = EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)var58);
+  result = EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)var58);
   if ( result )
     result = sub_7C2EC4(
                result,

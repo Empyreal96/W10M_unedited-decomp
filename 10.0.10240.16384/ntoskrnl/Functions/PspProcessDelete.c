@@ -217,10 +217,10 @@ LABEL_15:
     __pld(&KeServiceDescriptorTable);
     v24 = 32;
     v25 = &KeServiceDescriptorTable;
-    v86 = dword_641C50;
-    v26 = dword_641C50;
-    v90 = dword_641C54;
-    v27 = dword_641C54;
+    v86 = qword_641C50;
+    v26 = qword_641C50;
+    v90 = MEMORY[0x641C54];
+    v27 = MEMORY[0x641C54];
     v28 = 4;
     v29 = dword_641C58 & 0x3F;
     v30 = 64 - (dword_641C58 & 0x3F);
@@ -276,12 +276,12 @@ LABEL_15:
         dword_641C40 = (int)&KeServiceDescriptorTable;
         dword_641C44 = 0;
         v42 = dword_641C58;
-        v44 = dword_641C54;
-        v43 = dword_641C50;
+        v44 = MEMORY[0x641C54];
+        v43 = qword_641C50;
         v84 = (unsigned int)v40;
-        v86 = dword_641C50;
+        v86 = qword_641C50;
         v88 = dword_641C58;
-        v90 = dword_641C54;
+        v90 = MEMORY[0x641C54];
 LABEL_52:
         v45 = 4 * dword_682088;
         v83 = KeServiceDescriptorTable;
@@ -350,8 +350,8 @@ LABEL_52:
           dword_641C40 = KeServiceDescriptorTable;
           dword_641C44 = 0;
           v56 = dword_641C58;
-          v57 = dword_641C54;
-          v55 = dword_641C50;
+          v57 = MEMORY[0x641C54];
+          v55 = qword_641C50;
         }
         v58 = &KeServiceDescriptorTableShadow;
         __pld(&KeServiceDescriptorTableShadow);
@@ -469,9 +469,9 @@ LABEL_85:
         goto LABEL_77;
       }
     }
-    v43 = dword_641C50;
+    v43 = qword_641C50;
     v42 = dword_641C58;
-    v44 = dword_641C54;
+    v44 = MEMORY[0x641C54];
     goto LABEL_52;
   }
   return sub_7C03D4(v3);

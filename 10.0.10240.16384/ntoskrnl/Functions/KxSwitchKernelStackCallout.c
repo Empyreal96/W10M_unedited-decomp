@@ -8,8 +8,15 @@ void __fastcall KxSwitchKernelStackCallout(int a1, void (*a2)(void), int a3, int
 
   __enable_irq();
   a6 = a2;
-  if ( !a4 || (a5 = a1, !MmGrowKernelStackEx(&a5, a4)) )
-    a6();
+  if ( a4 )
+  {
+    a5 = a1;
+    if ( MmGrowKernelStackEx((int)&a5, a4) )
+      goto LABEL_5;
+    a1 = a5;
+  }
+  ((void (__fastcall *)(int, void (*)(void), int))a6)(a1, a2, a3);
+LABEL_5:
   v13 = (_DWORD *)v12[8];
   __disable_irq();
   v12[10] = v13[2];

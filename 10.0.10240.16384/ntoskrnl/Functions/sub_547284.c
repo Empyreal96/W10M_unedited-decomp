@@ -21,7 +21,7 @@ void __fastcall sub_547284(int a1, int a2, int a3, int a4, int a5, int a6, int a
   __mrc(14, 7, 2, 2, 7);
   if ( *(unsigned __int16 *)(*(_DWORD *)(v11 + 16) + 18) > (unsigned int)*(unsigned __int16 *)(*(_DWORD *)(v11 + 16) + 16) )
   {
-    PfpRpFileKeyUpdate(&unk_6372E0);
+    PfpRpFileKeyUpdate(&dword_6372E0);
     if ( *(_DWORD *)(v12 + 372) >= *(_DWORD *)(v12 + 376) )
       JUMPOUT(0x4C3822);
     v14 = *(_DWORD *)(v11 + 16);

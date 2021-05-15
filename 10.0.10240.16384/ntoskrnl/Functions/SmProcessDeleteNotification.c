@@ -12,7 +12,7 @@ unsigned __int8 *__fastcall SmProcessDeleteNotification(int a1, int a2, int a3, 
 
   v10[1] = a4;
   v10[0] = a1;
-  result = (unsigned __int8 *)SmpKeyedStoreEntryGet((int)&unk_636CC4, (int)v10, 2, 0);
+  result = (unsigned __int8 *)SmpKeyedStoreEntryGet((int)&byte_636CC4, (int)v10, 2, 0);
   if ( result )
   {
     v5 = *((_WORD *)result + 4);

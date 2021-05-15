@@ -41,7 +41,7 @@ void __fastcall __spoils<R2,R3,R12> CcRescheduleLazyWriteScan(int *a1)
       }
       HIDWORD(v5) = 1000;
       HIDWORD(v3) = v4;
-      LODWORD(v5) = &unk_632740;
+      LODWORD(v5) = &dword_632740;
       KeSetCoalescableTimer(v5, v3, 0, 0x3E8u, (int)&LazyWriter);
     }
     else

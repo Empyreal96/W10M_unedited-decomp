@@ -22,7 +22,7 @@ int __fastcall PnpDiagRundownParentPdoForEachDevice(int a1)
     v4[7] = 0;
     v4[8] = 4;
     v4[9] = 0;
-    EtwWrite(PnpRundownEtwHandle, unk_649E8C, (int)KMPnPRundownEvt_SleepStudy_ParentPdo, 0);
+    EtwWrite(PnpRundownEtwHandle, dword_649E8C, (int)KMPnPRundownEvt_SleepStudy_ParentPdo, 0);
   }
   return 0;
 }

@@ -87,7 +87,7 @@ LABEL_11:
         v27[6] = 0;
         v27[7] = 4;
         v27[8] = 0;
-        v10 = EtwWrite(EtwApiCallsProvRegHandle, dword_61A654, (int)KERNEL_AUDIT_API_TERMINATEPROCESS, 0);
+        v10 = EtwWrite(EtwApiCallsProvRegHandle, MEMORY[0x61A654], (int)KERNEL_AUDIT_API_TERMINATEPROCESS, 0);
       }
 LABEL_17:
       v16 = (__int16)(*(_WORD *)(v3 + 308) + 1);

@@ -4,7 +4,7 @@
 void __fastcall __noreturn KiRestoreFromTrapFrame(int a1, int a2, int a3, int a4, unsigned int a5, unsigned int a6)
 {
   int v11; // r12
-  __int16 v12; // r1
+  int v12; // r1
   unsigned int v13; // r3
   _DWORD v15[3]; // [sp-1A0h] [bp-1A0h] BYREF
   int v16; // [sp-194h] [bp-194h]
@@ -30,24 +30,24 @@ void __fastcall __noreturn KiRestoreFromTrapFrame(int a1, int a2, int a3, int a4
   while ( 1 )
   {
     v11 = __mrc(15, 0, 13, 0, 3);
-    v12 = *(_WORD *)(v11 + 2);
+    v12 = *(unsigned __int16 *)(v11 + 2);
     if ( !*(_BYTE *)(v11 + 122) )
       break;
     __mcr(15, 0, v11 | 1, 13, 0, 3);
     __enable_irq();
-    ((void (*)(void))KiInitiateUserApc)();
+    KiInitiateUserApc(*(unsigned __int8 *)(v11 + 122), v12, v11 | 1, a4);
     KfLowerIrql(0);
     __disable_irq();
   }
   if ( (v12 & 1) != 0 )
   {
-    ((void (__fastcall *)(int))KiCopyCounters)(v11);
+    KiCopyCounters((_DWORD *)v11);
     v11 = __mrc(15, 0, 13, 0, 3);
-    v12 = *(_WORD *)(v11 + 2);
+    LOWORD(v12) = *(_WORD *)(v11 + 2);
   }
   if ( (v12 & 0x100) != 0 )
   {
-    ((void (__fastcall *)(_DWORD *))KiWriteDebugRegs)(v15);
+    KiWriteDebugRegs((int)v15);
     v11 = __mrc(15, 0, 13, 0, 3);
   }
   if ( (*(_BYTE *)(v11 + 3) & 4) != 0 )

@@ -53,6 +53,6 @@ int __fastcall PpCheckInDriverDatabase(unsigned __int16 *a1, int a2, int a3, uns
   if ( v8 != -1073740948 && v8 != -1073740949 )
     return 0;
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x20000) != 0 )
-    Template_j(Microsoft_Windows_Kernel_PnPHandle, dword_649E54);
+    Template_j(Microsoft_Windows_Kernel_PnPHandle, MEMORY[0x649E54]);
   return v8;
 }

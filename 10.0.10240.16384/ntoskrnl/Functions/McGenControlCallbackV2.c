@@ -50,7 +50,7 @@ LABEL_10:
         for ( i = (int *)FsRtlTieringHeatData; i != &FsRtlTieringHeatData; i = (int *)*i )
         {
           if ( (Microsoft_Windows_Storage_Tiering_IoHeatEnableBits & 1) != 0 )
-            Template_jq(Microsoft_Windows_Storage_Tiering_IoHeatHandle, dword_64B094);
+            Template_jq(Microsoft_Windows_Storage_Tiering_IoHeatHandle, MEMORY[0x64B094]);
         }
         ExpReleaseResourceForThreadLite((int)&algn_631E04[4], __mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0);
       }

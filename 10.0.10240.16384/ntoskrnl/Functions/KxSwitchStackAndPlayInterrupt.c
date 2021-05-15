@@ -1,12 +1,12 @@
 // KxSwitchStackAndPlayInterrupt 
  
-int __fastcall KxSwitchStackAndPlayInterrupt(int a1, int a2, int a3, int a4, int a5)
+int __fastcall KxSwitchStackAndPlayInterrupt(__int64 a1, int a3, int a4, int a5)
 {
-  int v5; // r4
-  _BYTE v7[8]; // [sp+0h] [bp-8h] BYREF
+  int v4; // r4
+  _BYTE v6[8]; // [sp+0h] [bp-8h] BYREF
 
-  v5 = a5 - 8;
-  *(_DWORD *)(v5 + 4) = v7;
-  *(_DWORD *)(v5 + 4) = v7;
-  return KiPlayInterrupt();
+  v4 = a5 - 8;
+  *(_DWORD *)(v4 + 4) = v6;
+  *(_DWORD *)(v4 + 4) = v6;
+  return KiPlayInterrupt(a1, a3, a4);
 }

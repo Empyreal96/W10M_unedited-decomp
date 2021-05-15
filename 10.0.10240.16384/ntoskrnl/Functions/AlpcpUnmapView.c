@@ -1,6 +1,6 @@
 // AlpcpUnmapView 
  
-int AlpcpUnmapView()
+int __fastcall AlpcpUnmapView(int a1, int a2)
 {
-  return AlpcpCleanupView();
+  return AlpcpCleanupView(a1, a2);
 }

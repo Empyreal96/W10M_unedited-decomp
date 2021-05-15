@@ -19,7 +19,7 @@ int __fastcall KiEmulateDivide(int a1, int a2, int a3, int a4, int a5, int a6, i
   a11 = a1;
   a7 = v11;
   a8 = v12;
-  ((void (*)(void))((char *)sub_4220E6 + 4 * (HIWORD(v13) & 0xF)))();
+  ((void (__fastcall *)(int, int, int, int))((char *)sub_4220E6 + 4 * (HIWORD(v13) & 0xF)))(a1, a2, a3, a4);
   v18 = (signed int)sub_4220E6 + 4 * (v13 & 0xF);
   v19 = ((int (__fastcall *)(char *))v18)((char *)sub_4220E6 + 4 * (HIWORD(v13) & 0xF));
   if ( (v13 & 0x200000) == 0 )
@@ -40,7 +40,7 @@ int __fastcall KiEmulateDivide(int a1, int a2, int a3, int a4, int a5, int a6, i
                                                                            + -8 * (v23 - v24)),
         v25) )
   {
-    ((void (*)(void))((char *)sub_42216A + 4 * ((v13 >> 8) & 0xF)))();
+    ((void (*)())((char *)sub_42216A + 4 * ((v13 >> 8) & 0xF)))();
     a5 += 4;
     __asm { RFEFD.W         SP }
   }

@@ -24,9 +24,9 @@ int __fastcall KiSystemServiceHandler(_DWORD *a1, int a2, int a3, int a4)
   {
     v5 = (void *)a1[3];
     if ( v5 == &loc_4219E8 || v5 >= &loc_421A34 && v5 < &loc_421A6C )
-      a1 = (_DWORD *)RtlUnwindEx(a2, KiSystemServiceExit, a1, *a1, a3, 0);
+      a1 = (_DWORD *)RtlUnwindEx(a2, (int)KiSystemServiceExit, (int)a1, *a1, a3, 0);
     if ( *(_BYTE *)((__mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0) + 0x15A) )
-      KiBugCheckDispatch(59, *a1, a1, a3);
+      KiBugCheckDispatch(59, *a1, (int)a1, a3);
   }
   return 1;
 }

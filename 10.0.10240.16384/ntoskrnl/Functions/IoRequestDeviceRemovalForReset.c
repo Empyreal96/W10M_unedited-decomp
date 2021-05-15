@@ -36,7 +36,7 @@ int __fastcall IoRequestDeviceRemovalForReset(int a1)
   if ( v4 >= 0 )
   {
     if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x2000000) != 0 )
-      Template_hzr0(Microsoft_Windows_Kernel_PnPHandle, dword_649E54);
+      Template_hzr0(Microsoft_Windows_Kernel_PnPHandle, MEMORY[0x649E54]);
   }
   else
   {

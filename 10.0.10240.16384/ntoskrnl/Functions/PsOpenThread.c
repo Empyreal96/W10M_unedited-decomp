@@ -160,6 +160,6 @@ LABEL_35:
   _B8[63] = 0;
   _B8[64] = 4;
   _B8[65] = 0;
-  EtwWrite(EtwApiCallsProvRegHandle, dword_61A654, (int)KERNEL_AUDIT_API_OPENTHREAD, 0);
+  EtwWrite(EtwApiCallsProvRegHandle, MEMORY[0x61A654], (int)KERNEL_AUDIT_API_OPENTHREAD, 0);
   return v16;
 }

@@ -1,8 +1,8 @@
 // __rt_ursh 
  
-int __fastcall _rt_ursh(unsigned int a1, unsigned int a2, int a3)
+unsigned int __fastcall _rt_ursh(unsigned int a1, unsigned int a2, int a3)
 {
-  int result; // r0
+  unsigned int result; // r0
 
   if ( a3 >= 32 && (a3 -= 32, a1 = a2, a2 = 0, a3 >= 32) )
     result = 0;

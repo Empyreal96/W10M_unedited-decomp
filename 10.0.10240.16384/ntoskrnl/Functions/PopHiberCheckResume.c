@@ -75,12 +75,12 @@ int PopHiberCheckResume()
   }
   dword_61A1F8 = v1[186];
   dword_61A1FC = v1[187];
-  memmove((int)&dword_61EFA0, (int)(v1 + 26), 0x1E0u);
+  memmove((int)&qword_61EFA0, (int)(v1 + 26), 0x1E0u);
   *(_DWORD *)(v0 + 140) = v1[148];
   __dmb(0xBu);
   *(_BYTE *)(v0 + 5) = 0;
-  dword_61F068 = v6;
-  dword_61F06C = v5;
+  qword_61F068 = v6;
+  MEMORY[0x61F06C] = v5;
   qword_61EFF8 = __PAIR64__(v5, v6) - qword_61F000;
   return 1;
 }

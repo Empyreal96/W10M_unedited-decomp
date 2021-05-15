@@ -6,13 +6,13 @@ int __fastcall PoSetUserPresent(int a1)
   int result; // r0
 
   v2 = 0;
-  if ( (unsigned int)KeGetCurrentIrql() < 2 )
+  if ( (unsigned int)KeGetCurrentIrql(a1) < 2 )
   {
     PopAcquirePolicyLock();
     v2 = 1;
   }
   result = PopSetSystemState(4, a1);
   if ( v2 )
-    result = PopReleasePolicyLock(result);
+    result = PopReleasePolicyLock();
   return result;
 }

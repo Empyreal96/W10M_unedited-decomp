@@ -76,7 +76,7 @@ int __fastcall PopHandleNextState(__int64 a1)
           if ( !*(_DWORD *)(v3 + 1428) )
           {
             LODWORD(a1) = ReadTimeStampCounter();
-            *(_QWORD *)&dword_61F078 = a1;
+            *(_QWORD *)&qword_61F078 = a1;
           }
         }
       }

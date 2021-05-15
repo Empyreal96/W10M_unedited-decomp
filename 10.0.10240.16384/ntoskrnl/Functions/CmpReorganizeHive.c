@@ -496,11 +496,11 @@ LABEL_142:
         }
         else
         {
-          v84 = dword_64A424;
+          v84 = MEMORY[0x64A424];
           v83 = CmpReorganizeTotalBytesSaved;
         }
         CmpReorganizeTotalBytesSaved = v98 - v96 + v83;
-        dword_64A424 = __CFADD__(v98 - v96, v83) + v84;
+        MEMORY[0x64A424] = __CFADD__(v98 - v96, v83) + v84;
         CmpUpdateReorganizeRegistryValues();
       }
       v18 = 0;

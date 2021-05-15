@@ -63,12 +63,12 @@ _DWORD **__fastcall KiUpdateCpuTargetByWeight(unsigned __int16 *a1, int a2)
     v9 = *(_DWORD *)(v22 + 16);
     __dmb(0xBu);
     *v20 = 0;
-    v5 = dword_68105C;
+    v5 = MEMORY[0x68105C];
     v4 = KiCyclesPerGeneration;
   }
   else
   {
-    v5 = dword_68105C;
+    v5 = MEMORY[0x68105C];
     v4 = KiCyclesPerGeneration;
     if ( !KiGroupSchedulingTotalWeight )
       __brkdiv0();

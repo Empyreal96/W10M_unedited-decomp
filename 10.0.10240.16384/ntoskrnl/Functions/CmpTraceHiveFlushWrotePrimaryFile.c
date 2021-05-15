@@ -11,7 +11,7 @@ int __fastcall CmpTraceHiveFlushWrotePrimaryFile(int a1, int a2)
   var40[1] = 200196;
   var40[2] = 0;
   var40[3] = 0x40000000;
-  result = EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)var40);
+  result = EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)var40);
   if ( result )
     result = sub_7EA924();
   return result;

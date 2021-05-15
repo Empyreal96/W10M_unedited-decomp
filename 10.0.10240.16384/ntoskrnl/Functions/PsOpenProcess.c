@@ -157,6 +157,6 @@ LABEL_33:
   _C8[59] = 0;
   _C8[60] = 4;
   _C8[61] = 0;
-  EtwWrite(EtwApiCallsProvRegHandle, dword_61A654, (int)KERNEL_AUDIT_API_OPENPROCESS, 0);
+  EtwWrite(EtwApiCallsProvRegHandle, MEMORY[0x61A654], (int)KERNEL_AUDIT_API_OPENPROCESS, 0);
   return v14;
 }

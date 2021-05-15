@@ -47,8 +47,8 @@ int PopDiagTraceHiberStats()
     v0 = v34;
   else
     v0 = 0;
-  *(_QWORD *)&dword_61F070 = PopCaptureTimeOnProcZero();
-  v1 = dword_61F070;
+  *(_QWORD *)&qword_61F070 = PopCaptureTimeOnProcZero();
+  v1 = qword_61F070;
   if ( KeNumberProcessors_0 )
     v2 = KiProcessorBlock;
   else
@@ -62,8 +62,8 @@ int PopDiagTraceHiberStats()
   qword_61EFF8 = qword_61F068 - qword_61F000;
   qword_61F078 -= qword_61F088 + *(_QWORD *)&dword_61F090;
   qword_61F098 -= qword_61F088 + *(_QWORD *)&dword_61F090;
-  dword_61F070 = v1 - (qword_61F088 + dword_61F090);
-  dword_61F074 = v1 - (qword_61F088 + dword_61F090);
+  qword_61F070 = v1 - (qword_61F088 + dword_61F090);
+  MEMORY[0x61F074] = v1 - (qword_61F088 + dword_61F090);
   LODWORD(v6) = &PopHiberInfo;
   qword_61F0A0 -= qword_61F088 + *(_QWORD *)&dword_61F090;
   dword_61F16C = dword_61EED4;
@@ -139,7 +139,7 @@ int PopDiagTraceHiberStats()
   LODWORD(v25) = v20;
   if ( !__PAIR64__(HIDWORD(v25), v20) )
     __brkdiv0();
-  LODWORD(v26) = _rt_udiv64(v25, *(unsigned __int64 *)&dword_61F070);
+  LODWORD(v26) = _rt_udiv64(v25, *(unsigned __int64 *)&qword_61F070);
   qword_61F170 = v26 - (unsigned int)dword_61EFE8 - (unsigned int)dword_61EFF0;
   if ( v0 )
   {

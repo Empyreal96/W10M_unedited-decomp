@@ -21,7 +21,7 @@ unsigned int __fastcall IopDeviceRemovalForResetComplete(unsigned int a1)
     else if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x2000000) != 0 )
     {
 LABEL_8:
-      Template_hzr0qqhzr4(Microsoft_Windows_Kernel_PnPHandle, dword_649E54);
+      Template_hzr0qqhzr4(Microsoft_Windows_Kernel_PnPHandle, MEMORY[0x649E54]);
       goto LABEL_9;
     }
   }

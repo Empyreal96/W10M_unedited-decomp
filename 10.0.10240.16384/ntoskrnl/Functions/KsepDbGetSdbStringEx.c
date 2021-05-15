@@ -1,6 +1,6 @@
 // KsepDbGetSdbStringEx 
  
-int KsepDbGetSdbStringEx()
+int __fastcall KsepDbGetSdbStringEx(int a1, int a2)
 {
-  return KsepDbConvertInteger();
+  return KsepDbConvertInteger(a1, a2);
 }

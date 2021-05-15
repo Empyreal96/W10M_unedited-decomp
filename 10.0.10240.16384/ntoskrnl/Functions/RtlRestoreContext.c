@@ -17,10 +17,10 @@ void __fastcall __noreturn RtlRestoreContext(int a1, _DWORD *a2)
   int i; // r2
   _BYTE v20[416]; // [sp-1A0h] [bp-1B0h]
   int v21; // [sp+0h] [bp-10h] BYREF
-  unsigned int v22; // [sp+4h] [bp-Ch]
+  _DWORD *v22; // [sp+4h] [bp-Ch]
 
   v21 = a1;
-  v22 = (unsigned int)a2;
+  v22 = a2;
   if ( a2 )
   {
     v2 = *a2 ^ 0x80000000;
@@ -28,7 +28,7 @@ void __fastcall __noreturn RtlRestoreContext(int a1, _DWORD *a2)
     {
       for ( i = 0; i != 416; i += 4 )
         *(_DWORD *)&v20[i] = *(_DWORD *)(a1 + i);
-      RcConsolidateFrames(a2);
+      RcConsolidateFrames((int)a2);
     }
     if ( v2 == 38 )
     {
@@ -85,6 +85,6 @@ void __fastcall __noreturn RtlRestoreContext(int a1, _DWORD *a2)
   __asm { CPS.W           #0x12 }
   v18 = *(_QWORD *)(a1 + 64);
   v21 = v18 & 0xFFFFFFFE;
-  v22 = HIDWORD(v18) & 0xFFFFFEA0 | 0x33 | ((unsigned __int16)__get_CPSR() | 0x20) & 0x140;
+  v22 = (_DWORD *)(HIDWORD(v18) & 0xFFFFFEA0 | 0x33 | ((unsigned __int16)__get_CPSR() | 0x20) & 0x140);
   __asm { RFEFD.W         SP }
 }

@@ -942,8 +942,8 @@ LABEL_316:
         if ( v11 || !v5 )
           goto LABEL_173;
         v90 = dword_61EFE8;
-        _6C[1] = dword_61F170;
-        _6C[2] = dword_61F174;
+        _6C[1] = qword_61F170;
+        _6C[2] = MEMORY[0x61F174];
         _6C[3] = dword_61F178;
         _6C[4] = dword_61F17C;
         if ( !PopSleepStats )

@@ -50,8 +50,8 @@ int KsepMatchInitMachineInfo()
     KsepLogError(0, (int)"KSE: KsepMatchInitBiosInfo failed [0x%08x]\n", v5);
   }
   result = 0;
-  KsepMatchMachineInfo = (int)&unk_647518;
-  dword_6217B4 = (int)&unk_6474F4;
+  KsepMatchMachineInfo = (int)&dword_647518;
+  dword_6217B4 = (int)&dword_6474F4;
   dword_6217B8 = (int)dword_6474D0;
   dword_6217BC = (int)&unk_64747C;
   return result;

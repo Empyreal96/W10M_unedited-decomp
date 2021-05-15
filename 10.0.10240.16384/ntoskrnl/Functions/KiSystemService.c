@@ -3,20 +3,20 @@
 int __fastcall KiSystemService(unsigned int a1, int a2, int a3, int a4, int (__fastcall *a5)(int, int, int, int), int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28, int a29, int a30, int a31, int a32)
 {
   _DWORD *v32; // r12
-  int v33; // r1
+  unsigned int v33; // r1
   unsigned int v34; // r0
   int *v35; // r3
   int *v36; // r3
   unsigned int v37; // r2
   int v38; // r3
   int v39; // r2
-  int (__fastcall *v40)(_DWORD, _DWORD, _DWORD, _DWORD); // r3
+  int (__fastcall *v40)(int, int, int, int); // r3
   unsigned int v42; // r1
   bool v43; // zf
   int result; // r0
   char v45; // [sp+0h] [bp-40h]
   unsigned int v46; // [sp+0h] [bp-40h]
-  int (__fastcall *v47)(_DWORD, _DWORD, _DWORD, _DWORD); // [sp+4h] [bp-3Ch]
+  int (__fastcall *v47)(int, int, int, int); // [sp+4h] [bp-3Ch]
 
   v32[24] = &a5;
   v33 = (a1 >> 12) & 1;
@@ -32,7 +32,7 @@ int __fastcall KiSystemService(unsigned int a1, int a2, int a3, int a4, int (__f
     if ( v34 < v37 )
     {
       v39 = *(_DWORD *)(v38 + 4 * v34);
-      v40 = (int (__fastcall *)(_DWORD, _DWORD, _DWORD, _DWORD))(v38 + (v39 >> 4));
+      v40 = (int (__fastcall *)(int, int, int, int))(v38 + (v39 >> 4));
       if ( v33 && *(_DWORD *)(v32[39] + 3952) )
       {
         v45 = v39;
@@ -50,9 +50,9 @@ int __fastcall KiSystemService(unsigned int a1, int a2, int a3, int a4, int (__f
       if ( v43 )
         return v40(a29, a30, a31, a32);
       a5 = v40;
-      PerfInfoLogSysCallEntry(v40);
+      PerfInfoLogSysCallEntry((int)v40);
       a29 = a5(a29, a30, a31, a32);
-      PerfInfoLogSysCallExit();
+      PerfInfoLogSysCallExit(a29);
       return a29;
     }
     if ( !v33 )

@@ -30,7 +30,7 @@ LABEL_12:
     {
       while ( 1 )
       {
-        v4 = unk_681FE4;
+        v4 = MEMORY[0x681FE4];
         v3 = KiCpuSetSequence;
         __dmb(0xBu);
         if ( (v3 & 1) == 0 )
@@ -70,7 +70,7 @@ LABEL_12:
         v2 = 1;
       }
       __dmb(0xBu);
-      if ( KiCpuSetSequence == v3 && unk_681FE4 == v4 )
+      if ( KiCpuSetSequence == v3 && MEMORY[0x681FE4] == v4 )
         goto LABEL_12;
     }
     result = sub_50A884();

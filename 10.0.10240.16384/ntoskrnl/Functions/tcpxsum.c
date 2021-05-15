@@ -2,7 +2,7 @@
  
 int __fastcall tcpxsum(unsigned __int32 a1, uint32x4_t *a2, unsigned int a3)
 {
-  int32x4_t v3; // q0
+  uint32x4_t v3; // q0
   uint32x4_t v4; // q2
   bool v5; // cf
   uint32x4_t v6; // q0

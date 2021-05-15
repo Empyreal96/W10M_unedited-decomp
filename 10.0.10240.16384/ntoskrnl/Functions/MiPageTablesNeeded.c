@@ -4,8 +4,8 @@ int __fastcall MiPageTablesNeeded(__int64 a1, unsigned int a2)
 {
   int v2; // r6
   unsigned int v3; // r4
-  char *v4; // r5
-  char v6[32]; // [sp+8h] [bp-20h] BYREF
+  unsigned int *v4; // r5
+  unsigned int v6[8]; // [sp+8h] [bp-20h] BYREF
 
   v2 = 0;
   v3 = 0;
@@ -18,8 +18,8 @@ int __fastcall MiPageTablesNeeded(__int64 a1, unsigned int a2)
     if ( v3 >= a2 )
       v2 += ((HIDWORD(a1) - (int)a1) >> 2) + 1;
     ++v3;
-    v4 += 8;
+    v4 += 2;
   }
   while ( v3 < 2 );
-  return v2 - MiCountExistingPageTables(a1, HIDWORD(a1), v6, 1, a2);
+  return v2 - MiCountExistingPageTables((_DWORD *)a1, HIDWORD(a1), v6, 1, a2);
 }

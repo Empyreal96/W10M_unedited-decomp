@@ -1,103 +1,110 @@
 // PopPowerRequestCleanUp 
  
 // local variable allocation has failed, the output may be wrong!
-int __fastcall PopPowerRequestCleanUp(int result, int a2, int a3, int a4)
+void __fastcall PopPowerRequestCleanUp(int result, int a2, int a3, int a4)
 {
-  int v4; // r4
   int v5; // r5
-  int v6; // r0
-  int v7; // r2
-  _DWORD *v8; // r1
-  int *v9; // r6
+  int v6; // r2
+  int *v7; // r1
+  int *v8; // r6
+  int v9; // r1
   int *v10; // r2
   int v11; // r0
-  int v12; // r0
-  int v13; // r7
-  unsigned int v14; // r1
-  int v15; // r0
-  int v16; // r1 OVERLAPPED
-  _DWORD *v17; // r2 OVERLAPPED
-  int v18; // r3
-  _DWORD v19[8]; // [sp+0h] [bp-20h] BYREF
+  int v12; // r1
+  int v13; // r2
+  int v14; // r3
+  int v15; // r7
+  unsigned int v16; // r1
+  int v17; // r0
+  int v18; // r1 OVERLAPPED
+  _DWORD *v19; // r2 OVERLAPPED
+  int v20; // r3
+  int v21; // [sp+0h] [bp-20h] BYREF
+  int v22; // [sp+4h] [bp-1Ch]
+  int v23; // [sp+8h] [bp-18h]
+  int v24; // [sp+Ch] [bp-14h]
+  int v25; // [sp+10h] [bp-10h]
+  int v26; // [sp+14h] [bp-Ch]
+  int v27; // [sp+18h] [bp-8h]
+  int v28; // [sp+1Ch] [bp-4h]
+  __int64 savedregs; // [sp+20h] [bp+0h]
 
-  v19[0] = a2;
-  v19[1] = a3;
-  v19[2] = a4;
-  v4 = result;
+  v21 = a2;
+  v22 = a3;
+  v23 = a4;
   v5 = *(unsigned __int8 *)(result + 72);
   if ( *(_DWORD *)result )
   {
-    v6 = PopAcquirePowerRequestPushLock(1);
-    v7 = *(_DWORD *)v4;
-    if ( *(_DWORD *)v4 )
+    PopAcquirePowerRequestPushLock(1);
+    v6 = *(_DWORD *)result;
+    if ( *(_DWORD *)result )
     {
-      v8 = *(_DWORD **)(v4 + 4);
-      if ( *(_DWORD *)(v7 + 4) != v4 || *v8 != v4 )
+      v7 = *(int **)(result + 4);
+      if ( *(_DWORD *)(v6 + 4) != result || *v7 != result )
         __fastfail(3u);
-      *v8 = v7;
-      *(_DWORD *)(v7 + 4) = v8;
-      *(_DWORD *)v4 = 0;
-      v9 = &PopPowerRequestAttributes;
-      if ( *(_DWORD *)(v4 + 36) )
+      *v7 = v6;
+      *(_DWORD *)(v6 + 4) = v7;
+      *(_DWORD *)result = 0;
+      v8 = PopPowerRequestAttributes;
+      if ( *(_DWORD *)(result + 36) )
       {
-        result = sub_50F8A0(v6);
+        sub_50F8A0();
       }
       else
       {
-        PopDisablePowerExecutionRequest(v4, 0);
-        *(_DWORD *)(v4 + 68) = 0;
+        PopDisablePowerExecutionRequest(result, 0, v6, 0, v21);
+        *(_DWORD *)(result + 68) = 0;
         if ( v5 )
           v10 = &PopSpecialPowerRequestObjectCount;
         else
           v10 = &PopPowerRequestObjectCount;
-        v11 = *(_DWORD *)(v4 + 20);
+        v11 = *(_DWORD *)(result + 20);
         --*v10;
-        v12 = PopPowerRequestDeleteEntryById(v11);
-        PopReleasePowerRequestPushLock(v12);
-        PopDiagTracePowerRequestClose(v4);
-        KeAcquireInStackQueuedSpinLock(&PopPowerRequestSpinLock, v19);
-        v13 = *(unsigned __int8 *)(v4 + 57);
-        if ( *(_BYTE *)(v4 + 57) )
+        PopPowerRequestDeleteEntryById(v11, v9, (int)v10);
+        PopReleasePowerRequestPushLock();
+        PopDiagTracePowerRequestClose(result, v12, v13, v14, v21, v22, v23, v24, v25, v26, v27, v28, savedregs);
+        KeAcquireInStackQueuedSpinLock((unsigned int *)&PopPowerRequestSpinLock, (unsigned int)&v21);
+        v15 = *(unsigned __int8 *)(result + 57);
+        if ( *(_BYTE *)(result + 57) )
         {
-          *(_QWORD *)&v16 = *(_QWORD *)(v4 + 44);
-          if ( *(_DWORD *)(v16 + 4) != v4 + 44 || *v17 != v4 + 44 )
+          *(_QWORD *)&v18 = *(_QWORD *)(result + 44);
+          if ( *(_DWORD *)(v18 + 4) != result + 44 || *v19 != result + 44 )
             __fastfail(3u);
-          *v17 = v16;
-          *(_DWORD *)(v16 + 4) = v17;
-          *(_BYTE *)(v4 + 57) = 0;
+          *v19 = v18;
+          *(_DWORD *)(v18 + 4) = v19;
+          *(_BYTE *)(result + 57) = 0;
         }
-        v14 = 0;
-        v15 = v4;
+        v16 = 0;
+        v17 = result;
         do
         {
-          if ( ((1 << v14) & *(_DWORD *)(v4 + 16)) == 0 )
+          if ( ((1 << v16) & *(_DWORD *)(result + 16)) == 0 )
           {
-            if ( *(_DWORD *)(v15 + 24) )
+            if ( *(_DWORD *)(v17 + 24) )
             {
-              v18 = *v9 - 1;
-              *v9 = v18;
-              if ( !v14 || v14 == 3 || !v18 )
-                --*(_BYTE *)(v14 + v4 + 52);
+              v20 = *v8 - 1;
+              *v8 = v20;
+              if ( !v16 || v16 == 3 || !v20 )
+                --*(_BYTE *)(v16 + result + 52);
             }
           }
-          ++v14;
-          v15 += 4;
-          v9 += 2;
+          ++v16;
+          v17 += 4;
+          v8 += 2;
         }
-        while ( v14 < 5 );
-        KeReleaseInStackQueuedSpinLock(v19);
-        PopPowerRequestExecuteCallbacks(v4 + 52, *(_DWORD *)(v4 + 20), *(_DWORD *)(v4 + 8));
-        if ( v13 )
-          ObfDereferenceObjectWithTag(v4, 1953261124);
-        result = PoDestroyReasonContext(*(_DWORD *)(v4 + 60));
+        while ( v16 < 5 );
+        KeReleaseInStackQueuedSpinLock((int)&v21);
+        PopPowerRequestExecuteCallbacks(result + 52, *(_DWORD *)(result + 20), *(_DWORD *)(result + 8));
+        if ( v15 )
+          ObfDereferenceObjectWithTag(result);
+        PoDestroyReasonContext(*(_DWORD **)(result + 60));
         if ( !v5 )
-          result = PopUmpoSendPowerRequestOverrideCleanup(v4);
+          PopUmpoSendPowerRequestOverrideCleanup(result);
       }
     }
     else
     {
-      result = PopReleasePowerRequestPushLock(v6);
+      PopReleasePowerRequestPushLock();
     }
   }
-  return result;
 }

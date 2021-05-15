@@ -30,8 +30,8 @@ int __fastcall PfTGenerateTrace(int a1, int a2, int a3, int a4)
       }
     }
     while ( v5 != MEMORY[0xFFFF93B0] );
-    dword_643978 = v7 - v5;
-    dword_64397C = v7 - v5;
+    qword_643978 = v7 - v5;
+    MEMORY[0x64397C] = v7 - v5;
     PfTTraceListAdd(v9[0], -27728);
   }
   return v4;

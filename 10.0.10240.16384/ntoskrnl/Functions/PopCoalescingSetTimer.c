@@ -7,15 +7,14 @@ int PopCoalescingSetTimer()
 
   if ( PopCoalescingState )
   {
-    PopPrintEx(3, "PopCoalescing: Coalescing timer activated\n");
+    PopPrintEx(3);
     result = KiSetTimerEx(
-               &PopCoalescingTimer,
+               (int)&PopCoalescingTimer,
                0,
-               -10000000 * PopCoalescingTimerInterval,
-               (unsigned __int64)(-10000000i64 * PopCoalescingTimerInterval) >> 32,
+               -10000000i64 * PopCoalescingTimerInterval,
                0,
                0,
-               &PopCoalescingTimerDpc);
+               (int)&PopCoalescingTimerDpc);
     __dmb(0xBu);
     do
       v1 = __ldrex(byte_61F3C1);

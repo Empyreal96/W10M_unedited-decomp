@@ -2,7 +2,7 @@
  
 char *__fastcall strlen(unsigned int a1)
 {
-  int v1; // r1
+  unsigned int v1; // r1
   int v5; // t1
 
   v1 = ~a1;

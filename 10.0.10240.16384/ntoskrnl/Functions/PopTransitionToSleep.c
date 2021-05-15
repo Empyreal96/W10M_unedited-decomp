@@ -59,7 +59,7 @@ int __fastcall PopTransitionToSleep(int a1)
   }
   v5 = v3;
   LODWORD(v6) = ReadTimeStampCounter();
-  *(_QWORD *)&dword_61F098 = v6;
+  *(_QWORD *)&qword_61F098 = v6;
   *(_DWORD *)(a1 + 52) = v5;
   return KeSetEvent(a1 + 32, 0, 0);
 }

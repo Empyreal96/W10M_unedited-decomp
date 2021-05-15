@@ -1,6 +1,6 @@
 // FsRtlpAllocateECPTracker 
  
-int FsRtlpAllocateECPTracker()
+int __fastcall FsRtlpAllocateECPTracker(int a1, int a2)
 {
-  return FsRtlInitializeECPEx();
+  return FsRtlInitializeECPEx(a1, a2);
 }

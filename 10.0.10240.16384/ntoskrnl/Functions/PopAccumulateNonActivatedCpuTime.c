@@ -22,7 +22,7 @@ __int64 __fastcall PopAccumulateNonActivatedCpuTime(__int64 a1, __int64 a2)
     v5 = KiProcessorBlock;
   else
     v5 = 0;
-  PpmParkSnapNodeIdleTime(v5, &v12, &v11);
+  PpmParkSnapNodeIdleTime((int)v5, &v12, &v11);
   v6 = HIDWORD(v11);
   v7 = v12;
   v8 = v11;

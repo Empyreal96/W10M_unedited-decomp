@@ -1,7 +1,7 @@
 // SepExpandSingletonArrays 
  
 // local variable allocation has failed, the output may be wrong!
-int SepExpandSingletonArrays()
+void SepExpandSingletonArrays()
 {
   _BYTE *v0; // r0
   _BYTE *v1; // r6
@@ -14,10 +14,10 @@ int SepExpandSingletonArrays()
   int v8; // r5
   int *v9; // r4
   int *v10; // r0
-  int v11; // r4 OVERLAPPED
+  unsigned int v11; // r4 OVERLAPPED
   int v12; // r3
-  int result; // r0
-  unsigned int v14; // r1
+  unsigned int v13; // r1
+  int vars4; // [sp+1Ch] [bp+4h]
 
   v0 = (_BYTE *)ExAllocatePoolWithTag(512, 1536, 1950639443);
   v1 = v0;
@@ -47,8 +47,8 @@ int SepExpandSingletonArrays()
       if ( (v6 & 0x40000000) == 0 )
       {
         do
-          v14 = __ldrex(v2);
-        while ( v14 == v6 && __strex(v6 | 0x40000000, v2) );
+          v13 = __ldrex(v2);
+        while ( v13 == v6 && __strex(v6 | 0x40000000, v2) );
         __dmb(0xBu);
       }
       __dmb(0xAu);
@@ -68,7 +68,7 @@ int SepExpandSingletonArrays()
     v10[1] = v12 + 1;
     if ( (dword_682604 & 0x10000) != 0 )
     {
-      ExpReleaseSpinLockExclusiveFromDpcLevelInstrumented(v10);
+      ExpReleaseSpinLockExclusiveFromDpcLevelInstrumented(v10, vars4);
     }
     else
     {
@@ -76,17 +76,15 @@ int SepExpandSingletonArrays()
       *v10 = 0;
     }
     KfLowerIrql(v3);
-    ExFreePoolWithTag(v11, 1950639443);
-    result = 0;
+    ExFreePoolWithTag(v11);
   }
   else
   {
     if ( (dword_682604 & 0x10000) != 0 )
     {
-      ExpReleaseSpinLockExclusiveFromDpcLevelInstrumented(SepSingletonGlobal);
+      ExpReleaseSpinLockExclusiveFromDpcLevelInstrumented(SepSingletonGlobal, vars4);
       JUMPOUT(0x50FB10);
     }
-    result = sub_50FB08(SepSingletonGlobal);
+    sub_50FB08(SepSingletonGlobal);
   }
-  return result;
 }

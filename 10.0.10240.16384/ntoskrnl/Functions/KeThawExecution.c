@@ -35,7 +35,7 @@ int __fastcall KeThawExecution(int a1, int a2, int a3, int a4)
   MEMORY[0xFFFF9350] = v23;
   MEMORY[0xFFFF9354] = v24;
   KiInterruptTimeErrorAccumulator = 0;
-  dword_6376B4 = 0;
+  MEMORY[0x6376B4] = 0;
   v8 = KiSendThawExecution(v7);
   v9 = (unsigned __int8)KiOldIrql;
   v10 = KiFreezeFlag;

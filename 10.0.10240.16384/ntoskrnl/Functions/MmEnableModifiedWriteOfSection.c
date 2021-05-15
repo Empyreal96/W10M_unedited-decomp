@@ -68,7 +68,7 @@ int __fastcall MmEnableModifiedWriteOfSection(int a1)
   if ( dword_640708 == 0xFFFFF )
     return 1;
   v5 = KfRaiseIrql(2);
-  KeAcquireInStackQueuedSpinLockAtDpcLevel(&unk_640710, &v31, v6, 4112);
+  KeAcquireInStackQueuedSpinLockAtDpcLevel(&dword_640710, &v31, v6, 4112);
   v7 = dword_640708;
   if ( dword_640708 != 0xFFFFF )
   {
@@ -117,7 +117,7 @@ LABEL_10:
 LABEL_55:
       KfLowerIrql(v5);
       v5 = KfRaiseIrql(2);
-      KeAcquireInStackQueuedSpinLockAtDpcLevel(&unk_640710, &v31, v29, 4112);
+      KeAcquireInStackQueuedSpinLockAtDpcLevel(&dword_640710, &v31, v29, 4112);
       v7 = dword_640708;
       goto LABEL_10;
     }

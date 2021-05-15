@@ -82,7 +82,7 @@ LABEL_5:
       v13 = *a5;
       v14 = 1;
       v13[2] = SeTakeOwnershipPrivilege;
-      v13[3] = dword_922A14;
+      v13[3] = MEMORY[0x922A14];
       (*a5)[4] = 0x80000000;
     }
     else
@@ -99,7 +99,7 @@ LABEL_5:
     {
       v16 = (int)&(*a5)[3 * v14];
       *(_DWORD *)(v16 + 8) = SeRelabelPrivilege;
-      *(_DWORD *)(v16 + 12) = dword_922BBC;
+      *(_DWORD *)(v16 + 12) = MEMORY[0x922BBC];
       (*a5)[3 * v14 + 4] = 0x80000000;
     }
     return 0;

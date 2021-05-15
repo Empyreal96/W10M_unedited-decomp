@@ -28,7 +28,7 @@ int __fastcall PnpLogActionQueueEvent(int a1, int a2, int a3)
         return result;
       v4 = KMPnPEvt_ReenumerateDeviceOnly_Queue;
     }
-    return Template_z(Microsoft_Windows_Kernel_PnPHandle, dword_649E54, v4);
+    return Template_z(Microsoft_Windows_Kernel_PnPHandle, MEMORY[0x649E54], v4);
   }
   if ( a2 > 8 && (a2 <= 10 || a2 == 14) )
   {

@@ -11,7 +11,7 @@ unsigned int __fastcall ExLocalTimeToSystemTime(__int64 *a1, _DWORD *a2)
   v2 = *a1;
   v3 = *(_DWORD *)a1;
   v4 = ExpTimeZoneBias;
-  v5 = dword_61A4BC;
+  v5 = MEMORY[0x61A4BC];
   *a2 = *(_DWORD *)a1 + ExpTimeZoneBias;
   result = v3 + v4;
   a2[1] = (__PAIR64__(v5, v3) + __PAIR64__(HIDWORD(v2), v4)) >> 32;

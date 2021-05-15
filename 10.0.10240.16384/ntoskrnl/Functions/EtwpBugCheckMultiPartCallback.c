@@ -48,10 +48,10 @@ void __fastcall EtwpBugCheckMultiPartCallback(int a1, int a2, int a3)
     {
       v7 = *(_DWORD **)a3;
       v7[4] = EtwpBootTime;
-      v7[5] = dword_61A90C;
+      v7[5] = MEMORY[0x61A90C];
       v7[2] = EtwCPUSpeedInMHz;
       v7[6] = EtwPerfFreq;
-      v7[7] = dword_61A77C;
+      v7[7] = MEMORY[0x61A77C];
       *v7 = KeMaximumIncrement;
       v7[1] = -268425216;
       *(_DWORD *)(a3 + 28) = *(_DWORD *)a3;

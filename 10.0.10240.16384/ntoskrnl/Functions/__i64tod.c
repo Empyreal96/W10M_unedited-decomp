@@ -6,9 +6,10 @@ __int64 __fastcall _i64tod(__int64 a1)
   __int16 v3; // r2
   int v4; // r12
   __int64 v5; // r0
-  __int64 v11; // [sp+0h] [bp-8h]
+  unsigned int v11; // r3
+  __int64 v12; // [sp+0h] [bp-8h]
 
-  v11 = a1;
+  v12 = a1;
   _ZF = HIDWORD(a1) == 0;
   if ( a1 < 0 )
   {
@@ -21,7 +22,7 @@ __int64 __fastcall _i64tod(__int64 a1)
     v2 = __clz(a1);
     HIDWORD(a1) = (_DWORD)a1 << v2;
     if ( !((_DWORD)a1 << v2) )
-      return v11;
+      return v12;
     LODWORD(a1) = 0;
     v3 = v2 + 32;
   }
@@ -33,7 +34,7 @@ __int64 __fastcall _i64tod(__int64 a1)
   }
   v4 = (_DWORD)a1 << 20;
   LODWORD(a1) = a1 >> 11;
-  HIDWORD(v5) = ((HIDWORD(a1) >> 11) & 0x800FFFFF | (((1086 - v3) & 0x7FF) << 20)) & 0x7FFFFFFF | ((v11 < 0) << 31);
+  HIDWORD(v5) = ((HIDWORD(a1) >> 11) & 0x800FFFFF | (((1086 - v3) & 0x7FF) << 20)) & 0x7FFFFFFF | ((v12 < 0) << 31);
   if ( (v4 & 0x40000000) != 0 )
   {
     v4 &= 0xBFFFFFFF;
@@ -43,8 +44,9 @@ __int64 __fastcall _i64tod(__int64 a1)
   if ( 2 * v4 )
   {
     __asm { VMRS            R3, FPSCR }
-    if ( ((_R3 | 1) & ((_R3 | 1u) >> 8)) << 27 )
-      _i64tofp_exception_helper(v5, HIDWORD(v5), 17172481);
+    v11 = _R3 | 1;
+    if ( (v11 & (v11 >> 8)) << 27 )
+      _i64tofp_exception_helper(v5, SHIDWORD(v5), 17172481, v11);
   }
-  return v11;
+  return v12;
 }

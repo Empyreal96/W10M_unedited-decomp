@@ -45,7 +45,7 @@ LABEL_13:
       ++dword_64A5BC;
       goto LABEL_14;
     case 2:
-      v10 = (__int64 *)&unk_64A5C0;
+      v10 = (__int64 *)&dword_64A5C0;
       v11 = &qword_64A5D8;
       goto LABEL_11;
     case 3:
@@ -55,7 +55,7 @@ LABEL_13:
       v12 = &dword_64A598;
       goto LABEL_15;
     case 5:
-      v10 = (__int64 *)&unk_64A5A8;
+      v10 = (__int64 *)&dword_64A5A8;
       v11 = &qword_64A588;
 LABEL_11:
       *v10 = v9;

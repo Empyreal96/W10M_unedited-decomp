@@ -16,7 +16,7 @@ int __fastcall PiDevCfgLogDeviceMigrated(int result, int a2, int a3)
           v4 = (unsigned __int16 *)&dword_8CA6A8;
         result = Template_zzjzxtq(
                    Microsoft_Windows_Kernel_PnPHandle,
-                   dword_649E54,
+                   MEMORY[0x649E54],
                    (int)KMPnPEvt_DeviceMigrate_Failure,
                    (int)&Microsoft_Windows_Kernel_PnPHandle,
                    *(unsigned __int16 **)(result + 4),
@@ -32,7 +32,7 @@ int __fastcall PiDevCfgLogDeviceMigrated(int result, int a2, int a3)
         v3 = (unsigned __int16 *)&dword_8CA6A8;
       result = Template_zzjzxtq(
                  Microsoft_Windows_Kernel_PnPHandle,
-                 dword_649E54,
+                 MEMORY[0x649E54],
                  (int)KMPnPEvt_DeviceMigrate_Success,
                  (int)&Microsoft_Windows_Kernel_PnPHandle,
                  *(unsigned __int16 **)(result + 4),

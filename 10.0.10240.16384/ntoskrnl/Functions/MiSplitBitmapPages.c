@@ -11,7 +11,7 @@ int __fastcall MiSplitBitmapPages(int a1, unsigned int a2, int a3)
   {
     v5 = 48;
   }
-  else if ( a1 != 8 && a1 != 13 && (unsigned int)KeGetCurrentIrql() <= 1 )
+  else if ( a1 != 8 && a1 != 13 && (unsigned int)KeGetCurrentIrql(a1) <= 1 )
   {
     v5 = 33;
   }

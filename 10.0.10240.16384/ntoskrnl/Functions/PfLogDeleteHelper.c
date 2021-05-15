@@ -14,7 +14,7 @@ int __fastcall PfLogDeleteHelper(char a1, int a2, int a3, unsigned int a4)
   v15 = a4;
   v13[0] = 0;
   v14 = 0;
-  v8 = PfFbLogEntryReserve(&unk_6439A0, v13, &v14, 24);
+  v8 = PfFbLogEntryReserve(&qword_6439A0, v13, &v14, 24);
   if ( v8 < 0 )
   {
     v11 = v13[0];

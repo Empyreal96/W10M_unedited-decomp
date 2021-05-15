@@ -12,7 +12,7 @@ int __fastcall CmpTraceHiveUnloadStart(int a1, int a2, int a3, int a4, char a5, 
   v16[1] = 131332;
   v16[2] = 0;
   v16[3] = 0x40000000;
-  result = EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)v16);
+  result = EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)v16);
   if ( result )
     result = sub_7D1F28(result, v13, v14, v15, a5, a6, a7, a8, a9, a10, a11, a12);
   return result;

@@ -485,7 +485,7 @@ LABEL_93:
         memset(v179, 0, sizeof(v179));
         KeQueryBootTimeValues(&v179[2], v179, &v179[8]);
         v179[4] = ExpTimeZoneBias;
-        v179[5] = dword_61A4BC;
+        v179[5] = MEMORY[0x61A4BC];
         v179[6] = ExpCurrentTimeZoneId;
         do
         {

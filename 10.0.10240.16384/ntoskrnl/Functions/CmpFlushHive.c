@@ -60,7 +60,7 @@ int __fastcall CmpFlushHive(int a1, int a2)
   v51 = 196868;
   v52 = 0;
   v53 = 0x40000000;
-  v4 = EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)&v50);
+  v4 = EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)&v50);
   if ( v4 )
     return sub_7D3A24();
   v6 = *(_DWORD *)(a1 + 92);
@@ -452,13 +452,13 @@ LABEL_77:
   v45 = 197124;
   v46 = 0;
   v47 = 0x40000000;
-  if ( EtwEventEnabled(EtwpRegTraceHandle, unk_92026C, (int)&v44) )
+  if ( EtwEventEnabled(EtwpRegTraceHandle, dword_92026C, (int)&v44) )
   {
     v50 = (int)&v43;
     v51 = 0;
     v52 = 4;
     v53 = 0;
-    EtwWrite(EtwpRegTraceHandle, unk_92026C, (int)&v44, 0);
+    EtwWrite(EtwpRegTraceHandle, dword_92026C, (int)&v44, 0);
   }
   return v30;
 }

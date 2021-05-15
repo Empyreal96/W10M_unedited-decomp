@@ -1,6 +1,6 @@
 // _NLG_Notify 
  
-int NLG_Notify()
+void NLG_Notify()
 {
-  return _NLG_Dispatch2();
+  _NLG_Dispatch2();
 }

@@ -28,7 +28,7 @@ int __fastcall PipProcessStartPhase1(_DWORD *a1, int a2, int a3, int a4)
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x4000000) != 0 )
     Template_qz(
       Microsoft_Windows_Kernel_PnPHandle,
-      dword_649E54,
+      MEMORY[0x649E54],
       (int)KMPnPEvt_ProcessDeviceStart_Stop,
       a1[6],
       1,

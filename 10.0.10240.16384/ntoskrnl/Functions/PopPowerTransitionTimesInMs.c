@@ -27,7 +27,7 @@ int __fastcall PopPowerTransitionTimesInMs(int *a1, int *a2, int *a3, int *a4, i
   {
     v15[0] = 0;
     v15[1] = 0;
-    result = PopQpcTimeInMs(v15, &dword_61EF78);
+    result = PopQpcTimeInMs(v15, &qword_61EF78);
     *a5 = result;
     if ( PoResumeFromHibernate )
       *a5 = dword_61EFE8 + result;
@@ -38,7 +38,7 @@ int __fastcall PopPowerTransitionTimesInMs(int *a1, int *a2, int *a3, int *a4, i
     LODWORD(v12) = v14;
     if ( !__PAIR64__(HIDWORD(v12), v14) )
       __brkdiv0();
-    result = _rt_udiv64(v12, *(unsigned __int64 *)&dword_61EFB8);
+    result = _rt_udiv64(v12, *(unsigned __int64 *)&qword_61EFB8);
     *a3 = result;
   }
   if ( a4 )

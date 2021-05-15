@@ -7,7 +7,7 @@ int __fastcall PipProcessRestartPhase1(int *a1, int a2, int a3)
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x4000000) != 0 )
     Template_qz(
       Microsoft_Windows_Kernel_PnPHandle,
-      dword_649E54,
+      MEMORY[0x649E54],
       (int)KMPnPEvt_ProcessDeviceRestart_Start,
       a1[6],
       1,
@@ -28,7 +28,7 @@ int __fastcall PipProcessRestartPhase1(int *a1, int a2, int a3)
   if ( (Microsoft_Windows_Kernel_PnPEnableBits & 0x4000000) != 0 )
     Template_qz(
       Microsoft_Windows_Kernel_PnPHandle,
-      dword_649E54,
+      MEMORY[0x649E54],
       (int)KMPnPEvt_ProcessDeviceRestart_Stop,
       a1[6],
       1,

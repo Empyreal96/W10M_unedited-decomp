@@ -19,13 +19,13 @@ int __fastcall SmpProcessQueryStoreStats(int a1, int a2, int a3, int a4)
   {
     v6 = __mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0;
     --*(_WORD *)(v6 + 308);
-    v7 = KeAbPreAcquire((unsigned int)&unk_636CC4, 0, 0);
+    v7 = KeAbPreAcquire((unsigned int)&byte_636CC4, 0, 0);
     do
-      v8 = __ldrex((unsigned int *)&unk_636CC4);
-    while ( !v8 && __strex(0x11u, (unsigned int *)&unk_636CC4) );
+      v8 = __ldrex((unsigned int *)&byte_636CC4);
+    while ( !v8 && __strex(0x11u, (unsigned int *)&byte_636CC4) );
     __dmb(0xBu);
     if ( v8 )
-      ExfAcquirePushLockSharedEx(&unk_636CC4, v7, (unsigned int)&unk_636CC4);
+      ExfAcquirePushLockSharedEx(&byte_636CC4, v7, (unsigned int)&byte_636CC4);
     if ( v7 )
       *(_BYTE *)(v7 + 14) |= 1u;
     v9 = dword_636CD4;
@@ -42,11 +42,11 @@ int __fastcall SmpProcessQueryStoreStats(int a1, int a2, int a3, int a4)
     }
     __dmb(0xBu);
     do
-      v10 = __ldrex((unsigned int *)&unk_636CC4);
-    while ( v10 == 17 && __strex(0, (unsigned int *)&unk_636CC4) );
+      v10 = __ldrex((unsigned int *)&byte_636CC4);
+    while ( v10 == 17 && __strex(0, (unsigned int *)&byte_636CC4) );
     if ( v10 != 17 )
-      ExfReleasePushLockShared(&unk_636CC4, v10);
-    v11 = KeAbPostRelease((unsigned int)&unk_636CC4);
+      ExfReleasePushLockShared(&byte_636CC4, v10);
+    v11 = KeAbPostRelease((unsigned int)&byte_636CC4);
     v12 = __mrc(15, 0, 13, 0, 3) & 0xFFFFFFC0;
     v13 = *(_WORD *)(v12 + 0x134) + 1;
     *(_WORD *)(v12 + 308) = v13;
