@@ -1,0 +1,12 @@
+// KiIsNodeFull 
+ 
+BOOL __fastcall KiIsNodeFull(int a1)
+{
+  unsigned int v1; // r2
+
+  v1 = ~*(_DWORD *)(a1 + 260);
+  return (unsigned __int8)(*((_BYTE *)RtlpBitsClearTotal + BYTE2(v1))
+                         + *((_BYTE *)RtlpBitsClearTotal + HIBYTE(v1))
+                         + *((_BYTE *)RtlpBitsClearTotal + BYTE1(v1))
+                         + *((_BYTE *)RtlpBitsClearTotal + (unsigned __int8)v1)) == *(unsigned __int8 *)(a1 + 288);
+}

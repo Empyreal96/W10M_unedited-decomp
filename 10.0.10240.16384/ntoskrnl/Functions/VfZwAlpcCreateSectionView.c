@@ -1,0 +1,8 @@
+// VfZwAlpcCreateSectionView 
+ 
+int __fastcall VfZwAlpcCreateSectionView(int a1, int a2, int a3)
+{
+  if ( ViZwShouldCheck(a1, a2) )
+    ViZwCheckVirtualAddress(a3);
+  return pXdvZwAlpcCreateSectionView(a1, a2, a3);
+}

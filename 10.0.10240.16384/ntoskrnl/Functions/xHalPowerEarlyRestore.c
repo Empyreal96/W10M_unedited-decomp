@@ -1,0 +1,6 @@
+// xHalPowerEarlyRestore 
+ 
+void xHalPowerEarlyRestore()
+{
+  ;
+}

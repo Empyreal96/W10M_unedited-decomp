@@ -1,0 +1,6 @@
+// xHalFlushAndInvalidatePageExternalCache 
+ 
+void xHalFlushAndInvalidatePageExternalCache()
+{
+  ;
+}

@@ -1,0 +1,6 @@
+// AlpcMessageDeleteProcedure 
+ 
+void AlpcMessageDeleteProcedure()
+{
+  ;
+}

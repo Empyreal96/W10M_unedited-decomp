@@ -1,0 +1,6 @@
+// fabs 
+ 
+void fabs()
+{
+  ;
+}

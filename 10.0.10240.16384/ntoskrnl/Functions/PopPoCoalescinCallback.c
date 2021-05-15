@@ -1,0 +1,6 @@
+// PopPoCoalescinCallback 
+ 
+void PopPoCoalescinCallback()
+{
+  ;
+}

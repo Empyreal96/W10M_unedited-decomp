@@ -1,0 +1,6 @@
+// MY_READ_PORT_UCHAR 
+ 
+int MY_READ_PORT_UCHAR()
+{
+  return READ_PORT_UCHAR();
+}

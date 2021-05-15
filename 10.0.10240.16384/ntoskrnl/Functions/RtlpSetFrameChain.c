@@ -1,0 +1,6 @@
+// RtlpSetFrameChain 
+ 
+void RtlpSetFrameChain()
+{
+  ;
+}

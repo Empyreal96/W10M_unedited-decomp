@@ -1,0 +1,6 @@
+// MY_WRITE_PORT_UCHAR 
+ 
+int MY_WRITE_PORT_UCHAR()
+{
+  return WRITE_PORT_UCHAR();
+}

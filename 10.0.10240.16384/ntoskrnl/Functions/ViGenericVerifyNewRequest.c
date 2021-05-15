@@ -1,0 +1,6 @@
+// ViGenericVerifyNewRequest 
+ 
+void ViGenericVerifyNewRequest()
+{
+  ;
+}

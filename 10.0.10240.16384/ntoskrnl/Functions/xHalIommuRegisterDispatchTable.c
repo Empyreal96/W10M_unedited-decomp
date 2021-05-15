@@ -1,0 +1,6 @@
+// xHalIommuRegisterDispatchTable 
+ 
+void xHalIommuRegisterDispatchTable()
+{
+  ;
+}
