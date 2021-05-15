@@ -9,6 +9,7 @@ Pure Hex-rays Decompiler Psudocode of various Windows 10 Mobile Binaries, No edi
 
 - It is **NOT** compliable code yet.
 - This is from IDA Pro 7.5 with ARM plugins, some psudocode may be inaccurate.
+- Some Function names will not be 'unmangled' 
 - Disassembled `.ASM` files will be present for those with skills to use it.
 - Functions were decompiled and files named with the aid of [IDAFunctionsDecompiler](https://github.com/JCGdev/IDAFunctionsDecompiler)
 - If any functions failed to decompile, check the ERROR .txt in the `Functions` folder
